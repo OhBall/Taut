@@ -15,5 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // TODO: Delete before deployment
-import * as SessionApiUtil from './utils/session_api_util';
-window.SessionApiUtil = SessionApiUtil;
+
+import * as SessionsActions from './actions/session_actions';
+window.SessionsActions = SessionsActions;
