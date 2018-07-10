@@ -14,6 +14,7 @@ class Api::UsersController < ApplicationController
       password: user_params[:password])
 
     if @user.save
+      log_in(@user)
       render :show
     else
       render json: @user.errors.full_messages, status: 401
