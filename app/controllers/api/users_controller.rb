@@ -9,11 +9,14 @@ class Api::UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.new(
+      email: user_params[:email],
+      password: user_params[:password])
+
     if @user.save
       render :show
     else
-      render json: @user.errors.full_messages
+      render json: @user.errors.full_messages, status: 401
     end
   end
 
@@ -40,7 +43,7 @@ class Api::UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:email, :username, :password_digest, :session_token)
+    params.require(:user).permit(:email, :username, :password, :password_digest, :session_token)
   end
 
 end
