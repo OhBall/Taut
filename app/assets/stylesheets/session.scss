@@ -6,6 +6,11 @@ $background-cream: #f9f9f9;
 
 .session {
   font-family: 'Lato', sans-serif;
+  padding: 116px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $background-cream;
 }
 
 .session > a {
@@ -57,7 +62,7 @@ $background-cream: #f9f9f9;
   color: $light-black;
 }
 
-.form-container form input {
+.form-container form input, .form-container button {
   height: 50px;
   border: 1px solid #919193;
   border-radius: 5px;
@@ -67,19 +72,15 @@ $background-cream: #f9f9f9;
   font-size: 20px;
 }
 
-.form-container form input[type="submit"]{
+.form-container form input[type="submit"], .form-container button{
   color: white;
   background-color: $slack-green;
   text-align: center;
   margin-top: 18px;
 }
 
-.session {
-  padding: 116px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: $background-cream;
+.form-container button {
+  margin-top: 10px
 }
 
 

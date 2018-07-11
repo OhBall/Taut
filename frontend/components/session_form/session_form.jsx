@@ -30,8 +30,9 @@ class SessionForm extends React.Component {
 
     let guestLoginButton;
     if (formType === 'Sign in') {
-      guestLoginButton = <button onClick={this.loginAsGuest}
-                                 value='Sign in as guest'/>;
+      guestLoginButton = <button onClick={this.loginAsGuest}>
+                           Sign in as guest
+                         </button>;
     }
     return (
       <div className='session'>
