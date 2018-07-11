@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class SessionForm extends React.Component {
   constructor (props){
     super(props);
@@ -23,7 +24,7 @@ class SessionForm extends React.Component {
     return (
       <div className='session'>
         <div className='form-container'>
-          <h1>{this.props.formType} to Taut</h1>
+          <h1>{formType} to Taut</h1>
           <h2 id='session-form-subhead'>'slack-to-taut.heroku.com'</h2>
           <h2>Enter your <b>email address</b> and <b>password</b>.</h2>
           <form onSubmit={this.handleSubmit}>
@@ -39,8 +40,9 @@ class SessionForm extends React.Component {
               onChange={this.update('password')}
               placeholder='password'/>
 
-            <input type='submit' value={this.props.formType}/>
+            <input type='submit' value={formType}/>
           </form>
+
         </div>
         {navLink}
       </div>
