@@ -21,7 +21,7 @@ class SessionForm extends React.Component {
   }
 
   loginAsGuest(){
-    const guestUser = {username: 'guest@guest.com', password: 'hunter2'};
+    const guestUser = {email: 'guest@guest.com', password: 'hunter2'};
     this.props.processForm(guestUser);
   }
 
