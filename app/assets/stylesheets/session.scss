@@ -21,7 +21,7 @@ $background-cream: #f9f9f9;
   text-decoration: underline ;
 }
 
-.form-container {
+.form-container, .session-errors {
   width: 636px;
   margin: 0 auto;
   margin-bottom: 32px;
@@ -81,6 +81,11 @@ $background-cream: #f9f9f9;
 
 .form-container button {
   margin-top: 10px
+}
+
+.session-errors {
+  border-left: 5px solid #d82b3f;
+
 }
 
 

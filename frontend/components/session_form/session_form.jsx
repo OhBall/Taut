@@ -1,5 +1,6 @@
 import React from 'react';
 
+import SessionErrors from './session_errors';
 
 class SessionForm extends React.Component {
   constructor (props){
@@ -26,16 +27,19 @@ class SessionForm extends React.Component {
   }
 
   render(){
-    const { formType, navLink } = this.props;
+    const { formType, navLink, errors } = this.props;
 
     let guestLoginButton;
     if (formType === 'Sign in') {
       guestLoginButton = <button onClick={this.loginAsGuest}>
                            Sign in as guest
-                         </button>;
-    }
+                         </button>; }
+
+    const hidden = errors.length === 0 ? 'hidden' : '';
+
     return (
       <div className='session'>
+        <SessionErrors errors={errors} hidden={hidden}/>
         <div className='form-container'>
           <h1>{formType} to Taut</h1>
           <h2 id='session-form-subhead'>'slack-to-taut.heroku.com'</h2>
