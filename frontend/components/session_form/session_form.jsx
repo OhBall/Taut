@@ -6,6 +6,7 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {email: '', password: ''};
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.loginAsGuest = this.loginAsGuest.bind(this);
   }
 
   update(field){
@@ -19,8 +20,19 @@ class SessionForm extends React.Component {
     this.props.processForm(this.state);
   }
 
+  loginAsGuest(){
+    const guestUser = {username: 'guest@guest.com', password: 'hunter2'};
+    this.props.processForm(guestUser);
+  }
+
   render(){
-    const {navLink} = this.props;
+    const { formType, navLink } = this.props;
+
+    let guestLoginButton;
+    if (formType === 'Sign in') {
+      guestLoginButton = <button onClick={this.loginAsGuest}
+                                 value='Sign in as guest'/>;
+    }
     return (
       <div className='session'>
         <div className='form-container'>
@@ -42,7 +54,7 @@ class SessionForm extends React.Component {
 
             <input type='submit' value={formType}/>
           </form>
-
+          {guestLoginButton}
         </div>
         {navLink}
       </div>
