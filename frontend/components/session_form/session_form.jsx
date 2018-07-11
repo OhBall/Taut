@@ -22,9 +22,9 @@ class SessionForm extends React.Component {
     const {navLink} = this.props;
     return (
       <div className='session form-container'>
-        <h2>{this.props.formType}</h2>
-        <h3>'slack-to-taut.heroku.com'</h3>
-        <section>Enter your <b>email address</b> and <b>password</b></section>
+        <h1>{this.props.formType}</h1>
+        <h2 id='session-form-subhead'>'slack-to-taut.heroku.com'</h2>
+        <h2>Enter your <b>email address</b> and <b>password</b>.</h2>
         <form onSubmit={this.handleSubmit}>
           <input
             type='text'

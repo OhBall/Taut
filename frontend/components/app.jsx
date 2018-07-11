@@ -10,8 +10,7 @@ const App = () => {
       <Link to='/login'>Link to Login Form</Link>
       <br/>
       <Link to='/signup'>Link to Signup Form</Link>
-      <br/>
-      <br/>
+
       <Route path='/login' component={LoginForm} />
       <Route path='/signup' component={SignupForm} />
     </div>

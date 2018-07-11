@@ -10,7 +10,7 @@ $background-cream: #f9f9f9;
 
   width: 340px;
   margin: 0 auto;
-  padding: 40px 100px;
+  padding: 40px 139px;
 
   border: 1px solid $light-grey-border;
   border-radius: 5px;
@@ -19,13 +19,20 @@ $background-cream: #f9f9f9;
   color: $light-black;
 }
 
-.form-container h2 {
+.form-container h1 {
+  margin: 0 auto;
   font-size: 30px;
   font-weight: bold;
+  margin-bottom: 10px;
 }
-.form-container h3 {
-  font-size: 30px;
-  font-weight: bold;
+.form-container h2 {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.form-container #session-form-subhead {
+  margin: 0 auto;
+  margin-bottom: 35px;
 }
 
 .form-container form {
