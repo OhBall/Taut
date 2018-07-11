@@ -21,25 +21,27 @@ class SessionForm extends React.Component {
   render(){
     const {navLink} = this.props;
     return (
-      <div className='session form-container'>
-        <h1>{this.props.formType}</h1>
-        <h2 id='session-form-subhead'>'slack-to-taut.heroku.com'</h2>
-        <h2>Enter your <b>email address</b> and <b>password</b>.</h2>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type='text'
-            value={this.state.email}
-            onChange={this.update('email')}
-            placeholder='you@example.com'/>
+      <div className='session'>
+        <div className='form-container'>
+          <h1>{this.props.formType} to Taut</h1>
+          <h2 id='session-form-subhead'>'slack-to-taut.heroku.com'</h2>
+          <h2>Enter your <b>email address</b> and <b>password</b>.</h2>
+          <form onSubmit={this.handleSubmit}>
+            <input
+              type='text'
+              value={this.state.email}
+              onChange={this.update('email')}
+              placeholder='you@example.com'/>
 
-          <input
-            type='password'
-            value={this.state.password}
-            onChange={this.update('password')}
-            placeholder='password'/>
+            <input
+              type='password'
+              value={this.state.password}
+              onChange={this.update('password')}
+              placeholder='password'/>
 
-          <input type='submit' value={this.props.formType}/>
-        </form>
+            <input type='submit' value={this.props.formType}/>
+          </form>
+        </div>
         {navLink}
       </div>
     );

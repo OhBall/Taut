@@ -3,21 +3,32 @@ $light-grey-border: #e8e8e8;
 $slack-green: #108851;
 $background-cream: #f9f9f9;
 
+
+.session {
+  font-family: 'Lato', sans-serif;
+}
+
+.session > a {
+
+}
+
 .form-container {
+  width: 636px;
+  margin: 0 auto;
+  margin-bottom: 32px;
+  padding: 40px 139px;
+  box-sizing: border-box;
+
   display: flex;
   flex-direction: column;
   align-items: left;
-
-  width: 340px;
-  margin: 0 auto;
-  padding: 40px 139px;
 
   border: 1px solid $light-grey-border;
   border-radius: 5px;
   box-shadow: 0 1px 1px -1px $light-black;
 
-  font-family: 'Lato', sans-serif;
   color: $light-black;
+  background-color: white;
 }
 
 .form-container h1 {
@@ -47,7 +58,7 @@ $background-cream: #f9f9f9;
   border: 1px solid #919193;
   border-radius: 5px;
   margin-top: 10px;
-  padding-left: 15px;
+  padding: 0 15px;
   box-sizing: border-box;
   font-size: 20px;
 }
@@ -58,5 +69,14 @@ $background-cream: #f9f9f9;
   text-align: center;
   margin-top: 18px;
 }
+
+.session {
+  padding: 116px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $background-cream;
+}
+
 
 //// TODO: Add breakpoints
