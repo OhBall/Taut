@@ -9,7 +9,11 @@ $background-cream: #f9f9f9;
 }
 
 .session > a {
+  color: blue;
+}
 
+.session > a:hover {
+  text-decoration: underline ;
 }
 
 .form-container {
