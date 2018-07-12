@@ -27,7 +27,7 @@ $hover-grey: #717274;
   align-items: center;
 }
 
-.splash-nav section a {
+.splash-nav section a, .splash-nav section button {
   font-family: 'Lato', sans-serif;
   color: $button-grey;
 
@@ -39,7 +39,7 @@ $hover-grey: #717274;
   box-sizing: border-box;
 }
 
-.splash-nav section a:hover {
+.splash-nav section a:hover, .splash-nav section button:hover {
   color: $hover-grey;
   border: 2px solid $hover-grey;
 }
