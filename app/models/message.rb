@@ -14,10 +14,14 @@
 class Message < ApplicationRecord
 
   validates :body, presence: true
-  validates :conversationable_id: presence: true
-  validates :conversationable_type: presence: true
+  validates :conversationable_id, presence: true
+  validates :conversationable_type, presence: true
 
   belongs_to :user
   belongs_to :conversationable, polymorphic: true
 
+
+  //# TODO: implement a 'ensure_subscribed' method that makes sure that a user
+    # =>    is subscribed to a channel before they make a message that belongs
+    # =>    to that channel. Note: This todo is also located in Channel.rb
 end
