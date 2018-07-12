@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Router } from 'react-router-dom';
 
 import { AuthRoute, ProtectedRoute } from '../utils/route_util';
 
@@ -12,7 +12,7 @@ import SignupForm from './session_form/signup_form_container';
 const App = () => {
   return(
     <div id='app'>
-      <Route path='/' component={SplashHeader} />
+      <Route exact path='(/|/signin|/signup)' component={SplashHeader} />
       <Route exact path='/' component={SplashScreen} />
       <AuthRoute path='/signin' component={LoginForm} />
       <AuthRoute path='/signup' component={SignupForm} />
