@@ -20,6 +20,7 @@ $hover-grey: #717274;
   box-shadow: 0 2px 1px -1px $light-grey-border;
   background-color: white;
   z-index: 1;
+  font-family: 'Lato', sans-serif;
 }
 
 .splash-nav section {
@@ -28,7 +29,6 @@ $hover-grey: #717274;
 }
 
 .splash-nav section a, .splash-nav section button {
-  font-family: 'Lato', sans-serif;
   color: $button-grey;
 
   border: 2px solid $button-grey;

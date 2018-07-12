@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import LogoutButton from './logout_button_container';
+import LogoutButton from './logout_button';
 
 const SplashHeader = (props) => {
   return (
