@@ -13,7 +13,7 @@ const App = () => {
   return(
     <div id='app'>
       <Route path='/' component={SplashHeader} />
-      <Route path='/' component={SplashScreen} />
+      <Route exact path='/' component={SplashScreen} />
       <AuthRoute path='/signin' component={LoginForm} />
       <AuthRoute path='/signup' component={SignupForm} />
     </div>

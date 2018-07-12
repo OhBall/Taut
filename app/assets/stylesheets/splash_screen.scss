@@ -1,0 +1,76 @@
+$header-navy: #333648;
+$navy-grey: #5b5e6d;
+$button-blue: #3f46ad;
+$link-blue: #0576b9;
+
+.splash-screen {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  margin: 0 auto;
+  padding-top: 160px;
+  max-width: 1360px;
+
+  font-family: 'Lato', sans-serif;
+}
+
+.splash-screen img {
+  max-width: 655px;
+  max-height: 584px;
+}
+
+.splash-illustration-container {
+  width: 100%;
+  height: 100%
+}
+
+.splash-screen .second-column {
+  flex-shrink: .8;
+}
+
+.splash-screen h1 {
+  color: $header-navy;
+  font-family: 'Chonburi';
+  font-size: 70px;
+
+  margin-bottom: 32px;
+}
+
+.splash-screen p {
+  color: $navy-grey;
+  font-size: 20px;
+  font-weight: 400;
+  padding-right: 51.2px;
+  line-height: 1.8;
+  box-sizing: border-box;
+  max-width: 600px;
+  margin-bottom: 32px;
+}
+
+.splash-screen .second-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.splash-screen .second-column > a {
+  color: white;
+  background-color: $button-blue;
+
+  width: 172px;
+  padding: 20px 0;
+  border-radius: 5px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.splash-screen .second-column span {
+  color: $navy-grey;
+  font-size: 14px;
+  margin-top: 16px;
+}
+
+.splash-screen .second-column span a {
+  color: $link-blue;
+  text-decoration: underline;
+}
