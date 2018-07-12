@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_12_161505) do
+ActiveRecord::Schema.define(version: 2018_07_12_180029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,13 +39,15 @@ ActiveRecord::Schema.define(version: 2018_07_12_161505) do
   create_table "channels", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name", null: false
+    t.boolean "private", default: false, null: false
   end
 
   create_table "messages", force: :cascade do |t|
     t.string "body", null: false
     t.integer "user_id", null: false
-    t.string "conversationable_type"
-    t.bigint "conversationable_id"
+    t.string "conversationable_type", null: false
+    t.integer "conversationable_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["conversationable_type", "conversationable_id"], name: "index_messages_on_conversationable_type_and_conversationable_id"
