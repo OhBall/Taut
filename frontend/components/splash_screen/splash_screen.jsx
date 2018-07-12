@@ -5,7 +5,7 @@ const SplashScreen = () => {
   return(
     <div className='splash-screen'>
       <div className ='splash-illustration-container'>
-        <img src={window.splash_illustration}/>
+        <div id='splash-illustration'></div>
       </div>
       <div className = 'second-column'>
         <h1>Where Work Happens</h1>
