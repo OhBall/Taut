@@ -3,8 +3,8 @@ import React from 'react';
 const SessionErrors = props => {
 
   const { errors, hidden } = props;
-  const errorLis = errors.map( (error) => {
-    return <li>{error}</li>;
+  const errorLis = errors.map( (error, idx) => {
+    return <li key={idx}>{error}</li>;
   });
 
   return(
