@@ -10,5 +10,5 @@ users = User.create([
   {email: 'olivermartinball@gmail.com', username: 'Oliver', password: 'hunter2' },
   {email: 'jimmy@gmail.com', password: 'hunter2' },
   {email: 'john@continental.com', username: 'John', password: 'hunter2' },
-  {email: "olivermartinball@gmail.com", username: "Oliver"}
+  {email: 'guest@gust.com', username: "guest", password: 'hunter2'}
   ])
