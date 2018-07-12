@@ -6,11 +6,11 @@ $link-blue: #0576b9;
 .splash-screen {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
 
   margin: 0 auto;
   padding-top: 160px;
-  max-width: 1360px;
+  max-width: 1230px;
 
   font-family: 'Lato', sans-serif;
 }
@@ -22,18 +22,24 @@ $link-blue: #0576b9;
   max-width: 655px;
   max-height: 584px;
 
-  object-fit: cover;
-  background-size: cover;
+  object-fit: contain;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .splash-illustration-container {
+  // padding-right: 200px;
   flex-shrink: 1;
-  width: 655px;
-  height: 584px;
+  width: 584px;
+  height: 655px;
+  flex-basis: 584px;
 }
 
 .splash-screen .second-column {
   flex-shrink: .8;
+  max-width: 600px;
+  // padding-left: 50px;
+  // margin-left: 200px;
 }
 
 .splash-screen h1 {
