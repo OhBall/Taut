@@ -1,19 +1,34 @@
 import React from 'react';
+import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
 
 import LogoutButton from './logout_button';
+import { logout } from '../../actions/session_actions';
 
-const SplashHeader = (props) => {
+const mapStateToProps = state => {
+  return {
+    loggedIn: Boolean(state.session.id)
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    logoutAction: () => dispatch(logout())
+  };
+};
+
+
+const SplashHeader = ({ loggedIn, logoutAction }) => {
   return (
     <header className='splash-nav'>
       <Link to='/'><img/>Taut</Link>
       <section>
-        <LogoutButton/>
-        <Link to='/signin'>{'Sign in'}</Link>
-        <Link to='/signup'>{'Sign up'}</Link>
+        <button onClick={logoutAction} hidden={!loggedIn}>Logout</button>
+        <Link to='/signin' hidden={loggedIn}>{'Sign in'}</Link>
+        <Link to='/signup' hidden={loggedIn}>{'Sign up'}</Link>
       </section>
     </header>
   );
 };
 
-export default SplashHeader;
+export default connect(mapStateToProps, mapDispatchToProps)(SplashHeader);
