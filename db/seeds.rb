@@ -12,3 +12,7 @@ users = User.create([
   {email: 'john@continental.com', username: 'John', password: 'hunter2' },
   {email: 'guest@gust.com', username: "guest", password: 'hunter2'}
   ])
+
+channels = Channel.create([
+  {name: '#general'}
+  ])
