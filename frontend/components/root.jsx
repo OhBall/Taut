@@ -7,9 +7,7 @@ import App from './app';
 const Root = ({store}) => (
   <Provider store={store}>
     <HashRouter>
-      <div>
-        <App/>
-      </div>
+      <App/>
     </HashRouter>
   </Provider>
 );

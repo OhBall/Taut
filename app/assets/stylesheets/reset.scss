@@ -44,3 +44,7 @@ button,
 input[type="submit"] {
   cursor: pointer;
 }
+
+html, body, #root, #app {
+  height: 100%;
+}

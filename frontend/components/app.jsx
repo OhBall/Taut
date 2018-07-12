@@ -7,7 +7,7 @@ import SignupForm from './session_form/signup_form_container';
 
 const App = () => {
   return(
-    <div>
+    <div id='app'>
       <Route path='/' component={SplashHeader} />
       <Route path='/signin' component={LoginForm} />
       <Route path='/signup' component={SignupForm} />
