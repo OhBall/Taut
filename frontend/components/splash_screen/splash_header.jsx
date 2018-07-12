@@ -1,13 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import LogoutButton from './logout_button_container';
+
 const SplashHeader = (props) => {
   return (
     <header className='splash-nav'>
-      <Link to='/'>LOGO PLACEHOLDER</Link>
+      <Link to='/'><img/>Taut</Link>
       <section>
-        <Link to='/signin'>Sign in</Link>
-        <Link to='/signup'>Sign up</Link>
+        <LogoutButton/>
+        <Link to='/signin'>{'Sign in'}</Link>
+        <Link to='/signup'>{'Sign up'}</Link>
       </section>
     </header>
   );
