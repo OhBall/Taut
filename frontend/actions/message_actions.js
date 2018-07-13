@@ -1,4 +1,4 @@
-import * as MessageApiUtil from  'messages_api_util.js';
+import * as MessageApiUtil from  '../utils/messages_api_util.js';
 
 export const RECEIVE_MESSAGES = 'RECEIVE_MESSAGES';
 export const RECEIVE_MESSAGE = 'RECEIVE_MESSAGE';

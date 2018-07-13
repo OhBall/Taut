@@ -1,0 +1,18 @@
+$sidebar-purple: #4b394b;
+
+.channel-sidebar {
+  height: 100%;
+  min-width: 220px;
+  max-width: 220px;
+  background-color: $sidebar-purple;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.channel-sidebar header{
+  color: white;
+}
+
+.channel-sidebar header h1 {
+  font-size: 20px;
+}

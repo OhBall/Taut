@@ -1,0 +1,32 @@
+$border-grey: #717274;
+
+.messenger, .message-form, .message-form textarea,{
+  width:100%;
+}
+
+.messenger{
+  position: relative;
+  height: 100%;
+  font-weight: 300;
+  font-family: 'Inconsolata', monospace;
+}
+
+.messenger footer {
+  position: absolute;
+  bottom: 0;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+}
+
+.message-form {
+  margin: 22px 20px;
+  border: 2px solid $border-grey;
+  border-radius: 5px;
+}
+
+.message-form textarea {
+  resize: none;
+  padding: 9px;
+  box-sizing: border-box;
+}
