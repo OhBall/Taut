@@ -17,7 +17,9 @@ class Api::UsersController < ApplicationController
       log_in(@user)
       render :show
     else
-      render json: @user.errors.full_messages, status: 401
+      errors = @user.errors.full_messages
+      errors.delete_if {|error| error == "Username can't be blank"}
+      render json: errors, status: 401
     end
   end
 
