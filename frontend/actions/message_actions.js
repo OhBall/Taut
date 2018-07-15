@@ -20,6 +20,7 @@ export const receiveMessage = message => {
 
 export const requestMessages = () => dispatch => {
   return MessageApiUtil.fetchMessages().then(
-    messages => dispatch(receiveMessages(messages))
+    messages => dispatch(receiveMessages(messages)),
+    () => console.log('NOOOOO')
   );
 };

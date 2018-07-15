@@ -4,28 +4,18 @@
 
 import React from 'react';
 
+import MessageList from './message_list_container';
 import MessageForm from './message_form';
 
-class Messenger extends React.Component {
-  constructor(props) {
-    super(props);
+const Messenger = (props) => {
 
-  }
+  return (
+    <div className='messenger'>
+      <MessageList />
+      <MessageForm />
+    </div>
+  );
 
-  componentDidMount() {
-    this.props.requestMessages();
-    this.props.createChannelSubscription(null, this.props.receiveMessage);
-  }
-
-  render() {
-    return (
-      <div className='messenger'>
-        This is the messenger component
-        <MessageForm />
-      </div>
-    );
-  }
-
-}
+};
 
 export default Messenger;
