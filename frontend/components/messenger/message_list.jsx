@@ -18,7 +18,7 @@ class MessageList extends React.Component{
     const { messages } = this.props;
     const messageEls = Object.values(messages).map( message => {
       const user = this.props.users[message.user_id];
-      return <MessageListItem message={message} user={user}/>;
+      return <MessageListItem key={message.id} message={message} user={user}/>;
     });
     return(
       <ul className={'message-list'}>
