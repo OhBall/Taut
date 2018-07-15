@@ -5,7 +5,7 @@
 import React from 'react';
 
 import MessageList from './message_list_container';
-import MessageForm from './message_form';
+import MessageForm from './message_form_container';
 
 const Messenger = (props) => {
 

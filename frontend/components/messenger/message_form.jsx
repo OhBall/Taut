@@ -5,26 +5,35 @@ class MessageForm extends React.Component {
     super(props);
     this.state = {};
     this.state.body = '';
+    this.state.user_id = this.props.currentUserId;
     //// TODO: set this.state.conversationable_info from props
+    this.state.conversationable_id = 1;
+    this.state.conversationable_type = 'Channel';
+
     this.update = this.update.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
   update(e) {
-
-    this.setState({ body: e.target.value });
+    if (e.target.value !== "\n"){
+     this.setState({ body: e.target.value });
+    }
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    // TODO: grab room from App[room${}]
-    // App.subscriptions['workspace1'];
+  handleKeyPress(e) {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      App.firstchannel.speak(this.state);
+      this.setState({body: ''});
+    }
   }
 
   render() {
     return (
       <footer>
-        <form className='message-form' onSubmit={this.handleSubmit}>
-          <textarea value={this.state.body} onChange={this.update}/>
+        <form className='message-form'>
+          <textarea value={this.state.body}
+            onChange={this.update}
+            onKeyPress={this.handleKeyPress}/>
         </form>
       </footer>
     );
