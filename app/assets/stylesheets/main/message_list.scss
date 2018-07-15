@@ -1,9 +1,58 @@
-.message-list .username {
+#message-list {
+  max-height: calc(100% - 62px);
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+#message-list li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-shrink: 0;
+  padding: 6px 0;
+}
+
+#message-list section {
+  display: flex;
+  flex-direction: column;
+}
+
+.message-info {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.message-info div {
+  display: block;
+}
+
+#message-list .username {
   font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-size: 16px;
 }
 
-.message-list .timestamp {
+#message-list .timestamp {
+  font-size: 12px;
   font-weight: 300;
+  margin-left: 5px;
+}
+
+
+#message-list img {
+  height: 36px;
+  width: 36px;
+  display: inline-block;
+  margin-left: 26px;
+  margin-right: 8px;
+}
+
+#message-list p {
+  display: block;
 }

@@ -18,9 +18,13 @@ const MessageListItem = ({message, user}) => {
   return(
     <li>
       <img src={img_url}/>
-      <span className='username'>{username}</span>
-      <span className='timestamp'>{time}</span>
-      <p>{body}</p>
+      <section className='words'>
+        <header className='message-info'>
+          <div className='username'>{username}</div>
+          <div className='timestamp'>{time}</div>
+        </header>
+        <p>{body}</p>
+      </section>
     </li>
   );
 

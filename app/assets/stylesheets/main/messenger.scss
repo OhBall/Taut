@@ -1,4 +1,5 @@
-$border-grey: #717274;
+$border-grey: #b3b3b4;
+$selected-border-grey: #717274;
 
 .messenger, .message-form, .message-form textarea,{
   width:100%;
@@ -7,6 +8,7 @@ $border-grey: #717274;
 .messenger{
   position: relative;
   height: 100%;
+  display: flex;
 }
 
 .messenger footer {
@@ -15,16 +17,26 @@ $border-grey: #717274;
   box-sizing: border-box;
   width: 100%;
   display: flex;
+  margin: 0;
 }
 
 .message-form {
-  margin: 22px 20px;
-  border: 2px solid $border-grey;
-  border-radius: 5px;
+  margin: 0 20px 22px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .message-form textarea {
   resize: none;
+  height: 40px;
   padding: 9px;
-  box-sizing: border-box;
+  border: 2px solid $border-grey;
+  border-radius: 5px;
+  
+}
+
+.message-form textarea:focus {
+  border-color: $selected-border-grey;
 }

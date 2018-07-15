@@ -21,7 +21,7 @@ class MessageList extends React.Component{
       return <MessageListItem key={message.id} message={message} user={user}/>;
     });
     return(
-      <ul className={'message-list'}>
+      <ul id={'message-list'}>
         {messageEls}
       </ul>
     );
