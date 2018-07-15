@@ -13,7 +13,6 @@ class Workspace1Channel < ApplicationCable::Channel
 
   def speak(data)
     #called server side after the frontend App call speak.
-    #datahould be a message
-    Message.new()
+    Message.create(data['message'])
   end
 end
