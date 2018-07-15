@@ -6,5 +6,8 @@ const ChannelsReducer = (state = {}, action) => {
 
       break;
     default:
+      return state;
   }
 };
+
+export default ChannelsReducer;

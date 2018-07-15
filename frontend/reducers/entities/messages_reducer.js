@@ -3,7 +3,7 @@ import { merge } from 'lodash';
 import { RECEIVE_MESSAGES,
          RECEIVE_MESSAGE } from '../../actions/message_actions';
 
-const MessageReducer = (state = {}, action) => {
+const MessagesReducer = (state = {}, action) => {
   Object.freeze(state);
   const stateCopy = merge ({}, state);
   switch (action.type) {
@@ -16,3 +16,5 @@ const MessageReducer = (state = {}, action) => {
       return state;
   }
 };
+
+export default MessagesReducer;

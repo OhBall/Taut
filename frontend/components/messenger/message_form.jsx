@@ -17,6 +17,7 @@ class MessageForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     // TODO: grab room from App[room${}]
+    // App.subscriptions['workspace1'];
   }
 
   render() {

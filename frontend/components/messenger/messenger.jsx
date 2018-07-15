@@ -6,14 +6,26 @@ import React from 'react';
 
 import MessageForm from './message_form';
 
-const Messenger = (props) => {
+class Messenger extends React.Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <div className='messenger'>
-      This is the messenger component
-      <MessageForm />
-    </div>
-  );
-};
+  }
+
+  componentDidMount() {
+    this.props.requestMessages();
+    this.props.createChannelSubscription(null, this.props.receiveMessage);
+  }
+
+  render() {
+    return (
+      <div className='messenger'>
+        This is the messenger component
+        <MessageForm />
+      </div>
+    );
+  }
+
+}
 
 export default Messenger;

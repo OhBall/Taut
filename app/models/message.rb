@@ -20,6 +20,7 @@ class Message < ApplicationRecord
   belongs_to :user
   belongs_to :conversationable, polymorphic: true
 
+  after_create_commit { MessageBroadcastJob.perform_later( self )}
 
   //# TODO: implement a 'ensure_subscribed' method that makes sure that a user
     # =>    is subscribed to a channel before they make a message that belongs
