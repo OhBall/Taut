@@ -6,7 +6,6 @@ const MessageListItem = ({message, user}) => {
   const {username, img_url} = user;
 
   const date = new Date(created_at);
-  debugger
   let hours = date.getHours();
   const ampm = hours < 12 ? 'AM' : 'PM';
   hours = hours % 12;
