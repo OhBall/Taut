@@ -6,12 +6,18 @@ class MessageForm extends React.Component {
     this.state = {};
     this.state.body = '';
     this.state.user_id = this.props.currentUserId;
-    //// TODO: set this.state.conversationable_info from props
-    this.state.conversationable_id = 1;
+    this.state.conversationable_id = this.props.selectedId;
+    //// TODO: set this.state.conversationable_type from props
     this.state.conversationable_type = 'Channel';
 
     this.update = this.update.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
+  }
+
+  componentWillReceiveProps(newProps){
+    if (newProps.selectedId !== this.state.conversationable_id){
+      this.setState({conversationable_id: newProps.selectedId});
+    }
   }
 
   update(e) {
