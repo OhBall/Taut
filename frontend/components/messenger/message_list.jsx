@@ -10,13 +10,12 @@ class MessageList extends React.Component{
     this.props.requestAllUsers();
   }
 
-  componentWillReceiveProps(newProps){
-
-  }
-
   render(){
     const { messages } = this.props;
-    const messageEls = Object.values(messages).map( message => {
+    const relevantMessages = Object.values(messages).filter( message => {
+      return message.conversationable_id === this.props.selectedId;
+    });
+    const messageEls = relevantMessages.map( message => {
       const user = this.props.users[message.user_id];
       return <MessageListItem key={message.id} message={message} user={user}/>;
     });

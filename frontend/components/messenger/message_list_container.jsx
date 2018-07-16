@@ -11,6 +11,7 @@ const mapStateToProps = state => {
     messages: state.entities.messages,
     users: state.entities.users,
     currentUserId: state.session.currentUser,
+    selectedId: state.ui.selectedId,
   };
 };
 
