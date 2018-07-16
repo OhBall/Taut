@@ -17,6 +17,7 @@
         window.currentUser =
           <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>;
         window.splash_illustration = "<%= image_url('splashscreen_illustration.png') %>";
+        window.default_icon = "<%= image_url('default_icon.png') %>";
       </script>
     <% end %>
 

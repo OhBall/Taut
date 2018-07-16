@@ -45,12 +45,15 @@
 }
 
 
-#message-list img {
+#profilepicture {
   height: 36px;
   width: 36px;
   display: inline-block;
   margin-left: 26px;
   margin-right: 8px;
+
+  background-image: image_url('default_icon.png');
+  background-size: contain;
 }
 
 #message-list p {
