@@ -4,10 +4,12 @@ import ChannelList from './channel_list';
 import { requestChannels,
          createChannel,
          deleteChannel } from '../../actions/channel_actions';
+import { selectChannel } from '../../actions/ui_actions';
 
 const mapStateToProps = state => {
   return {
     channels: state.entities.channels,
+    selectedId: state.ui.selectedId
   };
 };
 
@@ -16,6 +18,7 @@ const mapDispatchToProps = dispatch => {
     requestChannels: () => dispatch(requestChannels()),
     createChannel: channel => dispatch(createChannel(channel)),
     deleteChannel: id => dispatch(deleteChannel(id)),
+    selectChannel: id => dispatch(selectChannel(id)),
   };
 };
 

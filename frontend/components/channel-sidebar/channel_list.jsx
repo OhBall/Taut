@@ -4,6 +4,11 @@ import ChannelListItem from './channel_list_item';
 
 class ChannelList extends React.Component{
 
+  constructor(props){
+    super(props);
+    this.handleSelection = this.handleSelection.bind(this);
+  }
+
   componentDidMount(){
     this.props.requestChannels();
   }
@@ -12,9 +17,21 @@ class ChannelList extends React.Component{
     //// TODO: create selected ui state and map to props
   }
 
+  handleSelection(channelId){
+    return () => {
+      debugger
+      this.props.selectChannel(channelId);
+    };
+  }
+
   render(){
     const channelEls = Object.values(this.props.channels).map( channel => {
-      return <ChannelListItem key={channel.id} channel={channel} />;
+      const selected = channel.id === this.props.selectedId ? 'selected' : '';
+      return <ChannelListItem
+        key={channel.id}
+        channel={channel}
+        selected={selected}
+        onClick={this.handleSelection(channel.id)}/>;
     });
 
     return (

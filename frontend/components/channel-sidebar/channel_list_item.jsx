@@ -1,8 +1,8 @@
 import React from 'react';
 
-const ChannelListItem = ({ channel }) => {
+const ChannelListItem = ({ channel, selected }) => {
   return (
-    <li>
+    <li className={selected}>
       <span>#</span>
       <span>{channel.name}</span>
     </li>

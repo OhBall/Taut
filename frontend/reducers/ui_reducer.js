@@ -12,3 +12,5 @@ const UiReducer = (state = {}, action) => {
       return state;
   }
 };
+
+export default UiReducer;
