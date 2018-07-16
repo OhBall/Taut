@@ -55,7 +55,6 @@ $selected-green: #4b9688;
   display: flex;
   flex-direction: row;
 }
-
 .channel-list li:hover {
   background-color: $hover-purple;
 }
@@ -67,6 +66,10 @@ $selected-green: #4b9688;
 }
 
 .channel-list .selected {
+  color: white;
+  background-color: $selected-green;
+}
+.channel-list .selected:hover {
   color: white;
   background-color: $selected-green;
 }
