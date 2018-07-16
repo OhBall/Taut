@@ -11,8 +11,9 @@ users = User.create([
   {email: 'jimmy@gmail.com', password: 'hunter2' },
   {email: 'john@continental.com', username: 'John', password: 'hunter2' },
   {email: 'guest@guest.com', username: "guest", password: 'hunter2'}
-  ])
+])
 
 channels = Channel.create([
-  {name: 'general', description 'Thread for general discussion'}
-  ])
+  {name: 'general', description: 'Thread for general discussion'},
+  {name: 'Lunch', description: 'Discuss your lunch plans here'}
+])
