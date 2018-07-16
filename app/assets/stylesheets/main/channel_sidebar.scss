@@ -1,4 +1,5 @@
 $sidebar-purple: #4b394b;
+$hover-purple: #3e323c;
 $dull-white: #cac4c9;
 
 .channel-sidebar {
@@ -6,7 +7,7 @@ $dull-white: #cac4c9;
   min-width: 220px;
   max-width: 220px;
   background-color: $sidebar-purple;
-  padding: 15px;
+  padding-top: 15px;
   box-sizing: border-box;
   color: $dull-white;
   font-weight: 300;
@@ -14,24 +15,41 @@ $dull-white: #cac4c9;
   flex-direction: column;
 }
 
+.channel-sidebar > header {
+  padding: 0 15px;
+}
 
-.channel-sidebar header h1 {
+.channel-sidebar > header h1 {
   color: white;
   font-weight: 400;
   font-size: 20px;
 }
 
-.channel-list li span{
-  padding: 0 5px;
+.channel-sidebar > header > button:hover {
+  color: white;
 }
 
-.channel-list * {
+.channel-list {
+  padding-top: 26px;
+}
+
+.channel-list > * {
   min-height: 26px;
+  padding: 0 15px;
+}
+
+
+.channel-list li span{
+  padding: 0 5px;
 }
 
 .channel-list li {
   display: flex;
   flex-direction: row;
+}
+
+.channel-list li:hover {
+  background-color: $hover-purple;
 }
 
 .channel-list li span{
