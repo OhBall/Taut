@@ -6,6 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: redis://redistogo:b80144d70eef55a43d5a1e7efd892582@cod.redistogo.com:11425/
-  # url: <%=ENV['REDISTOGO_URL']%>
+  url: <%=ENV['REDISTOGO_URL']%>
   channel_prefix: Taut_production
