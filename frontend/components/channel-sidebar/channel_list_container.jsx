@@ -9,7 +9,7 @@ import { selectChannel } from '../../actions/ui_actions';
 const mapStateToProps = state => {
   return {
     channels: state.entities.channels,
-    selectedId: state.ui.selectedId
+    selectedId: state.ui.sidebar.selectedId
   };
 };
 
