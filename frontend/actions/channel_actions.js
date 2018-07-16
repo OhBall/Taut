@@ -26,25 +26,25 @@ export const removeChannel = ({ id }) => {
 };
 
 export const requestChannels = () => dispatch => {
-  ChannelApiUtil.fetchChannels().then(
+  return ChannelApiUtil.fetchChannels().then(
     channels => dispatch(receiveChannels(channels))
   );
 };
 
 export const requestChannel = () => dispatch => {
-  ChannelApiUtil.fetchChannel().then(
+  return ChannelApiUtil.fetchChannel().then(
     channel => dispatch(receiveChannel(channel))
   );
 };
 
 export const createChannel = channel => dispatch => {
-  ChannelApiUtil.createChannel().then(
+  return ChannelApiUtil.createChannel().then(
     receivedChannel => dispatch(receiveChannel(receivedChannel))
   );
 };
 
 export const deleteChannel = id => dispatch => {
-  ChannelApiUtil.deleteChannel(id).then(
+  return ChannelApiUtil.deleteChannel(id).then(
     deletedChannel => dispatch(removeChannel(deletedChannel))
   );
 };

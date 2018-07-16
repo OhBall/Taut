@@ -1,4 +1,5 @@
 import React from 'react';
+import ChannelList from './channel_list_container';
 
 class ConversationSidebar extends React.Component{
   constructor(props){
@@ -13,6 +14,7 @@ class ConversationSidebar extends React.Component{
           <h1>{username}</h1>
           <button onClick={this.props.logout}>Log Out</button>
         </header>
+        <ChannelList />
       </section>
     );
   }

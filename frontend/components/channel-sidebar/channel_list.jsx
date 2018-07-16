@@ -4,8 +4,8 @@ import ChannelListItem from './channel_list_item';
 
 class ChannelList extends React.Component{
 
-  componentWillMount(){
-    this.props.fetchChannels();
+  componentDidMount(){
+    this.props.requestChannels();
   }
 
   componentWillReceiveProps(newProps){
@@ -19,6 +19,7 @@ class ChannelList extends React.Component{
 
     return (
       <ul className='channel-list'>
+        <header>Channels</header>
         {channelEls}
       </ul>
     );
