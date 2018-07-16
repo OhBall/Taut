@@ -2,16 +2,17 @@
 #
 # Table name: channels
 #
-#  id         :bigint(8)        not null, primary key
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  name       :string           not null
-#  private    :boolean          default(FALSE), not null
+#  id          :bigint(8)        not null, primary key
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  name        :string           not null
+#  private     :boolean          default(FALSE), not null
+#  description :string
 #
 
 class Channel < ApplicationRecord
-  validates :name, presence: true
-  validates :name, uniqueness: true
+  validates :name, presence: true, uniqueness: true
+
   has_many :messages, as: :conversationable
 
   //# TODO: implement a 'ensure_subscribed' method that makes sure that a user

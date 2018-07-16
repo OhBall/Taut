@@ -7,7 +7,6 @@ class Api::MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.user_id = current_user.id
     if @message.save
-      # Workspace1Channel.broadcast_to('workspace1')
       render :show
     else
       render json: @message.errors.full_messages, status: 422

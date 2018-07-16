@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_12_192725) do
+ActiveRecord::Schema.define(version: 2018_07_16_014221) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2018_07_12_192725) do
     t.datetime "updated_at", null: false
     t.string "name", null: false
     t.boolean "private", default: false, null: false
+    t.string "description"
     t.index ["name"], name: "index_channels_on_name"
   end
 

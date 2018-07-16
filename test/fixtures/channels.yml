@@ -2,11 +2,12 @@
 #
 # Table name: channels
 #
-#  id         :bigint(8)        not null, primary key
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  name       :string           not null
-#  private    :boolean          default(FALSE), not null
+#  id          :bigint(8)        not null, primary key
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  name        :string           not null
+#  private     :boolean          default(FALSE), not null
+#  description :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
