@@ -94,8 +94,10 @@ Rails.application.configure do
 
 
   # TODO: comment out the comment below
-  # Will need to add frontend domain names to config.actio_tables.allowed_request_origins 
+  # Will need to add frontend domain names to config.actio_tables.allowed_request_origins
   config.action_cable.mount_path = '/cable'
-  config.action_cable.url = 'wss://localhost:3000/cable'
-  config.action_cable.allowed_request_origins = [ /http:\/\/localhost:*/ ]
+  # config.action_cable.url = 'wss://localhost:3000/cable'
+  # config.action_cable.allowed_request_origins = [ /http:\/\/localhost:*/ ]
+  config.action_cable.url = "wss://#{ENV['RAILS_HOST']}/cable"
+  config.action_cable.allowed_request_origins = ['https://slack-to-taut.herokuapp.com', 'http://slack-to-taut.herokuapp.com']
 end
