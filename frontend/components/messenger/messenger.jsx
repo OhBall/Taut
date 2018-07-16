@@ -6,16 +6,16 @@ import React from 'react';
 
 import MessageList from './message_list_container';
 import MessageForm from './message_form_container';
+import ModalConductor from '../modals/modal_conductor';
 
 const Messenger = (props) => {
-
   return (
     <div className='messenger'>
+      <ModalConductor />
       <MessageList />
       <MessageForm />
     </div>
   );
-
 };
 
 export default Messenger;

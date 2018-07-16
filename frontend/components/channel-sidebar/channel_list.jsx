@@ -4,10 +4,6 @@ import ChannelListItem from './channel_list_item';
 
 class ChannelList extends React.Component{
 
-  constructor(props){
-    super(props);
-  }
-
   componentDidMount(){
     this.props.requestChannels();
   }
@@ -24,7 +20,7 @@ class ChannelList extends React.Component{
 
     return (
       <ul className='channel-list'>
-        <header>Channels</header>
+        <header onClick={this.props.createChannelModal}>Channels</header>
         {channelEls}
       </ul>
     );

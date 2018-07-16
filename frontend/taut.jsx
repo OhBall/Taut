@@ -31,15 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // TODO: Delete before deployment
 
-import * as SessionsActions from './actions/session_actions';
-window.SessionsActions = SessionsActions;
-
-window.dummyMessage = {
-  body: 'this is a dummy message',
-  user_id: 1,
-  conversationable_id: 1,
-  conversationable_type: 'Channel',
-};
-
 import * as ChannelApiUtil from './utils/channel_api_util';
 window.cau = ChannelApiUtil;
+
+import * as ModalActions from './actions/modal_actions';
+window.ModalActions = ModalActions;
