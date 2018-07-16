@@ -98,6 +98,6 @@ Rails.application.configure do
   config.action_cable.mount_path = '/cable'
   # config.action_cable.url = 'wss://localhost:3000/cable'
   # config.action_cable.allowed_request_origins = [ /http:\/\/localhost:*/ ]
-  config.action_cable.url = "wss://#{ENV['RAILS_HOST']}/cable"
+  config.action_cable.url = "wss://http//slack-to-taut.herokuapp.com/cable"
   config.action_cable.allowed_request_origins = ['https://slack-to-taut.herokuapp.com', 'http://slack-to-taut.herokuapp.com']
 end

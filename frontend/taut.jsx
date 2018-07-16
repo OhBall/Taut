@@ -34,11 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
 import * as SessionsActions from './actions/session_actions';
 window.SessionsActions = SessionsActions;
 
-import * as mau from './utils/messages_api_util.js';
-window.mau = mau;
 window.dummyMessage = {
   body: 'this is a dummy message',
   user_id: 1,
   conversationable_id: 1,
   conversationable_type: 'Channel',
 };
+
+import * as ChannelApiUtil from './utils/channel_api_util';
+window.cau = ChannelApiUtil;
