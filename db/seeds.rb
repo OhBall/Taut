@@ -14,5 +14,5 @@ users = User.create([
   ])
 
 channels = Channel.create([
-  {name: '#general'}
+  {name: 'general', description 'Thread for general discussion'}
   ])
