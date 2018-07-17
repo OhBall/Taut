@@ -22,28 +22,33 @@ class ChannelFormModal extends React.Component {
   render(){
     const disabled = !this.state.name;
     const { formType } = this.props;
+    const prefix = '#';
     return (
       <form className='ChannelForm Modal' onSubmit={this.handleSubmit}>
         <h1>{`${formType} Channel`}</h1>
         <h4>{"Channels are where your members communicate. They're best when organized around a topic - #leads, for example."}</h4>
         <label>
           <h2>Name</h2>
-          <input
-            type='text'
-            placeholder='e.g. leads'
-            value={this.state.name}
-            onChange={this.update('name')}
-          />
+          <div className='input-container'>
+            <input
+              type='text'
+              placeholder='e.g. leads'
+              value={this.state.name}
+              onChange={this.update('name')}
+              />
+          </div>
         </label>
         <label>
           <div>
             <h2>Purpose</h2> <h3>(optional)</h3>
           </div>
-          <input
-            type='text'
-            value={this.state.description}
-            onChange={this.update('description')}
-          />
+          <div className='input-container'>
+            <input
+              type='text'
+              value={this.state.description}
+              onChange={this.update('description')}
+              />
+          </div>
         <h5>{"What's this channel about?"}</h5>
         </label>
         <div className='buttons-container'>
