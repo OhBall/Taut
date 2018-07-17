@@ -4,10 +4,19 @@ import MessageListItem from './message_list_item';
 
 class MessageList extends React.Component{
 
+  constructor(props){
+    super(props);
+    this.overflow_div = <div id='overflow-div'></div>;
+  }
+
   componentDidMount() {
     this.props.requestMessages();
     this.props.createChannelSubscription(null, this.props.receiveMessage);
     this.props.requestAllUsers();
+  }
+
+  componentDidUpdate(){
+    document.getElementById('overflow').scrollIntoView({behavior: "smooth"});
   }
 
   render(){
@@ -19,9 +28,11 @@ class MessageList extends React.Component{
       const user = this.props.users[message.user_id];
       return <MessageListItem key={message.id} message={message} user={user}/>;
     });
+
     return(
       <ul id={'message-list'}>
         {messageEls}
+        <div id='overflow' />
       </ul>
     );
 
