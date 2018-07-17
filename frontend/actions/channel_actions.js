@@ -38,7 +38,7 @@ export const requestChannel = () => dispatch => {
 };
 
 export const createChannel = channel => dispatch => {
-  return ChannelApiUtil.createChannel().then(
+  return ChannelApiUtil.createChannel(channel).then(
     receivedChannel => dispatch(receiveChannel(receivedChannel))
   );
 };

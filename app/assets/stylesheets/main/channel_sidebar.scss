@@ -43,6 +43,17 @@ $selected-green: #4b9688;
   cursor: pointer;
 }
 
+.channel-list > header {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.channel-list > header > span {
+  font-size: 23px;
+}
+
 .channel-list > header:hover {
   color: white;
 }
@@ -54,6 +65,7 @@ $selected-green: #4b9688;
 .channel-list li {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 .channel-list li:hover {
   background-color: $hover-purple;

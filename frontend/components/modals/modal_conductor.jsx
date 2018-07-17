@@ -20,7 +20,7 @@ const ModalConductor = (props) => {
     case CREATE_CHANNEL_MODAL:
       return (
         <div className='modal'>
-          <button onClick={props.clearModal}>X</button>
+          <button onClick={props.clearModal}>&#10005;</button>
           <CreateChannelForm />
         </div>
       );

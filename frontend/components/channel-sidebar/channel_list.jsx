@@ -20,7 +20,10 @@ class ChannelList extends React.Component{
 
     return (
       <ul className='channel-list'>
-        <header onClick={this.props.createChannelModal}>Channels</header>
+        <header onClick={this.props.createChannelModal}>
+          Channels
+          <span>&#x2295;</span>
+        </header>
         {channelEls}
       </ul>
     );
