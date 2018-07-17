@@ -27,22 +27,25 @@ export const deleteChannel = id => {
   });
 };
 
-//
-// export const createChannelSubscriptions = (convos, receiveMessage) => {
-//   Object.keys(convos).forEach( convoType => {
-//     for
-//
-//   });
-// };
-export const createChannelSubscription = (channel, receiveMessage) => {
+
+export const createChannelSubscriptions = (channels, receiveMessage) => {
+  Object.keys(channels).forEach( channelId => {
+    createChannelSubscription(channelId, receiveMessage);
+  });
+};
+
+export const createChannelSubscription = (channelId, receiveMessage) => {
   // App['firstchannel'] = App.cable.subscriptions.create({channel: "Workspace1Channel", room: 'workspace1'},{
-  App['firstchannel'] = App.cable.subscriptions.create({channel: "Workspace1Channel"},{
-    received: function(data){
-      const message = JSON.parse(data.message);
-      receiveMessage(message);
-    },
-    speak: function(message) {
-      return this.perform('speak', { message });
-    }
+  // debugger
+  App[channelId] = App.cable.subscriptions.create(
+    {channel: "Workspace1Channel", id: channelId},
+    {
+      received: function(data){
+        const message = JSON.parse(data.message);
+        receiveMessage(message);
+      },
+      speak: function(message) {
+        return this.perform('speak', { message });
+      }
   }
 );};

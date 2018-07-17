@@ -8,6 +8,7 @@ import {
 
 import { selectChannel } from '../../actions/ui_actions';
 import { createChannelModal } from '../../actions/modal_actions';
+import { receiveMessage } from '../../actions/message_actions';
 
 const mapStateToProps = state => {
   return {
@@ -22,6 +23,7 @@ const mapDispatchToProps = dispatch => {
     deleteChannel: id => dispatch(deleteChannel(id)),
     selectChannel: id => dispatch(selectChannel(id)),
     createChannelModal: () => dispatch(createChannelModal()),
+    receiveMessage: (message) => dispatch(receiveMessage(message)),
   };
 };
 

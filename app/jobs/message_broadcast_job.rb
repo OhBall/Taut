@@ -2,10 +2,9 @@ class MessageBroadcastJob < ApplicationJob
   queue_as :default
 
   def perform(message)
-    ActionCable.server.broadcast 'workspace1', message: render_message(message)
-    # Workspace1Channel.broadcast_to(
-    #   'firstchannel', message: render_message(message)
-    # )
+    Workspace1Channel.broadcast_to(
+      message.conversationable, message: render_message(message)
+    )
   end
 
   private

@@ -8,7 +8,8 @@ class ChannelListItem extends React.Component {
   }
 
   handleSelection(){
-    this.props.selectChannel(this.props.channel.id);
+    const id = this.props.channel.id;
+    this.props.selectChannel(id);
   }
 
   render() {

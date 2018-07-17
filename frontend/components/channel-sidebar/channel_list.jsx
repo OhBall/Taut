@@ -1,11 +1,17 @@
 import React from 'react';
 
 import ChannelListItem from './channel_list_item';
+import { createChannelSubscriptions } from '../../utils/channel_api_util';
 
 class ChannelList extends React.Component{
 
   componentDidMount(){
-    this.props.requestChannels();
+    this.props.requestChannels().then(
+      () =>  createChannelSubscriptions(
+        this.props.channels,
+         this.props.receiveMessage
+       )
+    );
   }
 
   render(){
