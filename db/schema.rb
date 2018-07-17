@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_16_014221) do
+ActiveRecord::Schema.define(version: 2018_07_17_192619) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,22 @@ ActiveRecord::Schema.define(version: 2018_07_16_014221) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["conversationable_type", "conversationable_id"], name: "index_messages_on_conversationable_type_and_conversationable_id"
+  end
+
+  create_table "permissions", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "channel_id", null: false
+    t.index ["channel_id"], name: "index_permissions_on_channel_id"
+    t.index ["user_id"], name: "index_permissions_on_user_id"
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "subscribable_type"
+    t.bigint "subscribable_id"
+    t.index ["subscribable_id"], name: "index_subscriptions_on_subscribable_id"
+    t.index ["subscribable_type", "subscribable_id"], name: "index_subscriptions_on_subscribable_type_and_subscribable_id"
+    t.index ["user_id"], name: "index_subscriptions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

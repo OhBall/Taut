@@ -17,17 +17,18 @@ $error-red: #d82b3f;
   border: 1px solid $dark-grey-border;
   border-radius: 5px;
   margin-top: 10px;
-  padding: 0 15px;
+  padding: 0 15px 0 10px;
   box-sizing: border-box;
-}
 
-.modal .input-container {
   font-size: 20px;
 }
 
+
 .modal .input-container span {
+  min-width: 23px;
   align-self: center;
   margin-right: 10px;
+  text-align: right;
 }
 
 .modal .input-container span, .modal input::placeholder {

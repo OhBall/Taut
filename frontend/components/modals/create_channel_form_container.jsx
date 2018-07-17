@@ -9,6 +9,7 @@ const mapStateToProps = state => {
     formType: 'Create',
     name: '',
     description: '',
+    private: false,
   };
 };
 

@@ -4,15 +4,24 @@ class ChannelFormModal extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = {name: props.name, description: props.description};
+    this.state = {
+      name: props.name,
+      description: props.description,
+      private: props.private,
+    };
     this.update = this.update.bind(this);
     this.submit = this.submit.bind(this);
+    this.toggleCheckbox = this.toggleCheckbox.bind(this);
   }
 
   update(field){
     return (e) => {
       this.setState({[field]: e.target.value});
     };
+  }
+
+  toggleCheckbox(e){
+    this.setState({private: e.target.checked});
   }
 
   submit(e){
@@ -22,15 +31,32 @@ class ChannelFormModal extends React.Component {
   render(){
     const disabled = !this.state.name;
     const { formType } = this.props;
-    const prefix = '#';
+    const privacy = this.state.private;
+    let privacyStatus;
+    let hideLock = '';
+    let hideHash = '';
+    if (privacy) {
+      privacyStatus = 'Private';
+      hideHash = 'hidden';
+    } else {
+      privacyStatus = 'Public';
+      hideLock = 'hidden';
+    }
+
     return (
       <form className='ChannelForm Modal' onSubmit={this.handleSubmit}>
         <h1>{`${formType} Channel`}</h1>
         <h4>{"Channels are where your members communicate. They're best when organized around a topic - #leads, for example."}</h4>
+        <h2>{`Privacy: ${privacyStatus}`}</h2>
+        <label className='switch'>
+          <input type='checkbox' onChange={this.toggleCheckbox}/>
+          <span className="slider"></span>
+        </label>
         <label>
           <h2>Name</h2>
           <div className='input-container'>
-            <span>{prefix}</span>
+            <span className={hideHash}>#</span>
+            <span className={hideLock}>&#128274;</span>
             <input
               type='text'
               placeholder='e.g. leads'
