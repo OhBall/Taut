@@ -20,12 +20,17 @@ const mapDispatchToProps = dispatch => {
 const SplashHeader = ({ loggedIn, logoutAction }) => {
   return (
     <header className='splash-nav'>
-      <Link to='/'><img/>Taut</Link>
-      <section>
-        <button onClick={logoutAction} hidden={!loggedIn}>Logout</button>
-        <Link to='/signin' hidden={loggedIn}>{'Sign in'}</Link>
-        <Link to='/signup' hidden={loggedIn}>{'Sign up'}</Link>
-      </section>
+      <div>
+        <Link to='/'>
+          <div></div>
+          <span>Taut</span>
+        </Link>
+        <section>
+          <button onClick={logoutAction} hidden={!loggedIn}>Logout</button>
+          <Link to='/signin' hidden={loggedIn}>{'Sign in'}</Link>
+          <Link to='/signup' hidden={loggedIn}>{'Sign up'}</Link>
+        </section>
+      </div>
     </header>
   );
 };
