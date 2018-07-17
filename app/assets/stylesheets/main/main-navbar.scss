@@ -1,0 +1,26 @@
+$light-black: #2c2d30;
+$bottom-border-grey: #e5e5e5;
+$light-grey-text: #717274;
+
+.main-navbar {
+  height: 60px;
+  max-height: 60px;
+  border-bottom: 1px solid $bottom-border-grey;
+  box-sizing: border-box;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-navbar h1 {
+  font-size: 18px;
+  font-weight: 700;
+  color: $light-black;
+}
+
+.main-navbar h2 {
+  font-size: 14px;
+  font-weight: 300;
+  color: $light-grey-text;
+}
