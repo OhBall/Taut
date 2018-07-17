@@ -12,9 +12,31 @@ $error-red: #d82b3f;
   margin: 0 auto;
 }
 
-.modal form input {
-  width: 100%;
+.modal .input-container{
+  height: 46px;
   border: 1px solid $dark-grey-border;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.modal .input-container {
+  font-size: 20px;
+}
+
+.modal .input-container span {
+  align-self: center;
+  margin-right: 10px;
+}
+
+.modal .input-container span, .modal input::placeholder {
+  color: $light-grey-text;
+}
+
+.modal input {
+  width: 100%;
+  border: none;
   border-radius: 5px;
   box-shadow: none;
 }
@@ -63,18 +85,6 @@ $error-red: #d82b3f;
 
 }
 
-.modal input {
-  height: 46px;
-  border: 1px solid $dark-grey-border;
-  border-radius: 5px;
-  margin-top: 10px;
-  padding: 0 15px;
-  box-sizing: border-box;
-  font-size: 20px;
-}
-.modal input::placeholder {
-  color: $light-grey-text;
-}
 
 .modal .buttons-container {
   display: flex;

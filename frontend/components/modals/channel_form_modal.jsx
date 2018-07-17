@@ -30,6 +30,7 @@ class ChannelFormModal extends React.Component {
         <label>
           <h2>Name</h2>
           <div className='input-container'>
+            <span>{prefix}</span>
             <input
               type='text'
               placeholder='e.g. leads'
