@@ -3,6 +3,8 @@ $cancel-grey: #717274;
 $light-grey-background: #e8e9e8;
 
 .modal {
+  position: absolute;
+  z-index: 1;
   min-height: 100%;
   min-width: 100%;
   color: $light-black;
