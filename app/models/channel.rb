@@ -15,6 +15,7 @@ class Channel < ApplicationRecord
 
   has_many :messages, as: :conversationable
   has_many :permissions
+  has_many :users, through: :permissions
 
   //# TODO: implement a 'ensure_subscribed' method that makes sure that a user
     # =>    is subscribed to a channel before they make a message that belongs
