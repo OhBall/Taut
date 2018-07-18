@@ -1,3 +1,5 @@
+import * as PermissionsApiUtil from '../utils/permissions_api_util';
+
 export const RECEIVE_PERMISSIONS = 'RECEIVE_PERMISSIONS';
 
 export const receivePermissions = permissions => {
@@ -7,6 +9,8 @@ export const receivePermissions = permissions => {
   };
 };
 
-export const requestPermissions = () => {
-  
+export const requestPermissions = () => dispatch => {
+  return PermissionsApiUtil.fetchPermissions().then(
+    permissions => dispatch(receivePermissions(permissions))
+  );
 };
