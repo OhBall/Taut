@@ -40,7 +40,7 @@ class ChannelFormModal extends React.Component {
     if (privacy) {
       privacyToggle = ' Private';
       hideOnPrivate = 'hidden';
-      privacyString = ' Private'
+      privacyString = ' Private';
     } else {
       privacyToggle = ' Public';
       hideOnPublic = 'hidden';
