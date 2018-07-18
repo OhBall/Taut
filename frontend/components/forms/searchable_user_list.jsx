@@ -16,16 +16,20 @@ class SearchableUserList extends React.Component {
   }
 
   render(){
-    const { users, selectUser, deselectUser } = this.props;
+    const { users, selectedUsers, selectUser, deselectUser  } = this.props;
     const matches = findMatchingUsers(users, this.state.query);
-    const matchEls = matches.map(
+    const nonselectedMatches = matches.filter(user => {
+      return !Object.values(selectedUsers).includes(user.id);
+    });
+
+    const matchEls = nonselectedMatches.map(
        user => <SearchableUserListItem
                   key={user.id}
                   user={user}
                   selectUser={selectUser} />
     );
 
-    const selectedEls = Object.keys(this.props.selectedUsers).map(
+    const selectedEls = Object.keys(selectedUsers).map(
       userId => <SelectedUserListItem
                   key={userId}
                   user={users[userId]}

@@ -12,11 +12,14 @@ export const fetchChannel = id => {
   });
 };
 
-export const createChannel = channel => {
+export const createChannel = (channel, userIds) => {
   return $.ajax({
     method: 'POST',
     url: 'api/channels',
-    data: {channel},
+    data: {
+      channel,
+      permissions: {userIds},
+    }
   });
 };
 
@@ -35,8 +38,6 @@ export const createChannelSubscriptions = (channels, receiveMessage) => {
 };
 
 export const createChannelSubscription = (channelId, receiveMessage) => {
-  // App['firstchannel'] = App.cable.subscriptions.create({channel: "Workspace1Channel", room: 'workspace1'},{
-  // debugger
   App[channelId] = App.cable.subscriptions.create(
     {channel: "Workspace1Channel", id: channelId},
     {

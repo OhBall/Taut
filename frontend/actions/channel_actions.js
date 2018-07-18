@@ -37,11 +37,12 @@ export const requestChannel = () => dispatch => {
   );
 };
 
-export const createChannel = channel => dispatch => {
-  return ChannelApiUtil.createChannel(channel).then(
-    receivedChannel => dispatch(receiveChannel(receivedChannel))
-  );
-};
+export const createChannel = (channel, permitIds) =>
+  dispatch => {
+    return ChannelApiUtil.createChannel(channel, permitIds).then(
+      receivedChannel => dispatch(receiveChannel(receivedChannel))
+    );
+  };
 
 export const deleteChannel = id => dispatch => {
   return ChannelApiUtil.deleteChannel(id).then(

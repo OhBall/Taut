@@ -10,12 +10,13 @@ const mapStateToProps = state => {
     name: '',
     description: '',
     private: false,
+    selectedUsers: state.ui.selectedUsers,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    formAction: channel => dispatch(createChannel(channel)),
+    formAction: (channel, userIds) => dispatch(createChannel(channel, userIds)),
     clearModal: () => dispatch(clearModal()),
   };
 };

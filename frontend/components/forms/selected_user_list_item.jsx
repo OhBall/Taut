@@ -9,7 +9,7 @@ const SelectedUserListItem = props => {
   const { id, username } = props.user;
   return (
     <li className='selected-user-list-item' onClick={handleClick}>
-      <h1>{username}</h1>
+      {username} &#10005;
     </li>
   );
 };

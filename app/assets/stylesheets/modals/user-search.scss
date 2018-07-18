@@ -1,6 +1,7 @@
 $border-blue: #cbe7f7;
 $hover-blue: #eaf5fc;
 $divider-grey: #e8e9e8;
+$user-blue: #2d9ee0;
 
 .modal .user-search {
   display: flex;
@@ -39,4 +40,25 @@ $divider-grey: #e8e9e8;
 .searchable-user-list-item h2{
   margin: 0 5px;
 }
-// .user-search ul li
+
+.selected-users .selected-user-list-item, .selected-user-list-item h1{
+  width: auto;
+  height: 26px;
+  font-size: 16px;
+}
+
+.selected-user-list-item{
+  display: inline-flex;
+  align-items: center;
+
+  padding: 0 6px;
+  margin: 5px;
+  border-radius: 5px;
+
+  color: white;
+  background-color: $user-blue;
+}
+
+.selected-user-list-item:hover, .searchable-user-list-item:hover {
+  cursor: pointer;
+}

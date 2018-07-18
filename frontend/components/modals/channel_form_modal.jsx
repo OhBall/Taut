@@ -26,7 +26,7 @@ class ChannelFormModal extends React.Component {
   }
 
   submit(e){
-    this.props.formAction(this.state);
+    this.props.formAction(this.state, this.props.selectedUsers);
   }
 
   render(){
@@ -94,7 +94,7 @@ class ChannelFormModal extends React.Component {
             {`${formType}${privacyString} Channel`}
           </button>
         </div>
-        <section class={hideOnPublic}>
+        <section className={hideOnPublic}>
           <SearchableUserList />
         </section>
       </form>
