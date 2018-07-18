@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
     preloadedState = {
       entities: {users: {[currentUser.id]: currentUser}},
       session: {id: currentUser.id},
-      ui: {modal: 'CREATE_CHANNEL_MODAL'},
     };
     window.currentUser = null;
   }
