@@ -71,10 +71,14 @@ $selected-green: #4b9688;
   background-color: $hover-purple;
 }
 
-.channel-list li span{
+.channel-list li span {
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+.channel-list li .lock {
+  padding-left: 0;
 }
 
 .channel-list .selected {

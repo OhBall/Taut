@@ -14,9 +14,14 @@ class ChannelListItem extends React.Component {
 
   render() {
     const { channel, selected, selectChannel } = this.props;
+
+    const hideOnPublic = channel.private ? '' : 'hidden';
+    const hideOnPrivate = channel.private ? 'hidden' : '';
+
     return (
       <li className={selected} onClick={this.handleSelection}>
-        <span>#</span>
+        <span className={hideOnPrivate}>#</span>
+        <span className={`lock ${hideOnPublic}`}>&#128274;</span>
         <span>{channel.name}</span>
       </li>
     );
