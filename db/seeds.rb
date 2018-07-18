@@ -24,11 +24,11 @@ messages = Message.create([
     conversationable_type: 'Channel',
     conversationable_id: Channel.first.id },
   { user_id: User.first.id,
-    body: "This is a really long message. The purpose of this message is to make sure that extremely long messages are styled correctly. That's right! This message is both funny, and a test! By reading this, you yourself are participating in the test! Isn't that cool?"
+    body: "This is a really long message. The purpose of this message is to make sure that extremely long messages are styled correctly. That's right! This message is both funny, and a test! By reading this, you yourself are participating in the test! Isn't that cool?",
     conversationable_type: 'Channel',
     conversationable_id: Channel.first.id },
   { user_id: User.first.id,
-    body: "This \nis\na\nmulti-line message. \nHopefully, \nit's styled correctly!"
+    body: "This \nis\na\nmulti-line message. \nHopefully, \nit's styled correctly!",
     conversationable_type: 'Channel',
     conversationable_id: Channel.first.id }
 ])
