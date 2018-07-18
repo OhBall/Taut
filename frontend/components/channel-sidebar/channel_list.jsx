@@ -1,17 +1,11 @@
 import React from 'react';
 
-import ChannelListItem from './channel_list_item';
-import { createChannelSubscriptions } from '../../utils/channel_api_util';
+import ChannelListItem from './channel_list_item_container';
 
 class ChannelList extends React.Component{
 
   componentDidMount(){
-    this.props.requestChannels().then(
-      () =>  createChannelSubscriptions(
-        this.props.channels,
-         this.props.receiveMessage
-       )
-    );
+    this.props.requestChannels();
   }
 
   render(){
@@ -21,7 +15,7 @@ class ChannelList extends React.Component{
         key={channel.id}
         channel={channel}
         selected={selected}
-        selectChannel={this.props.selectChannel}/>;
+        selectChannel={this.props.selectChannel} />;
     });
 
     return (

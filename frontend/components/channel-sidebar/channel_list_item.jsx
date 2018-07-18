@@ -1,10 +1,18 @@
 import React from 'react';
 
+import { createChannelSubscription } from '../../utils/channel_api_util';
+
+
 class ChannelListItem extends React.Component {
 
   constructor(props){
     super(props);
     this.handleSelection = this.handleSelection.bind(this);
+  }
+
+  componentDidMount(){
+    const { channel, receiveMessage } = this.props;
+    createChannelSubscription(channel.id, receiveMessage);
   }
 
   handleSelection(){
