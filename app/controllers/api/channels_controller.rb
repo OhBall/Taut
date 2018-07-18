@@ -15,10 +15,8 @@ class Api::ChannelsController < ApplicationController
         end
         @channel.permissions.build(user_id: current_user_id)
       end
-      if @channel.save
-        render :show
-      else
-        render :show, status 422
+      @channel.save
+      render :show
     else
       render json: @channel.errors.full_messages
     end
