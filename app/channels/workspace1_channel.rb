@@ -10,6 +10,9 @@ class Workspace1Channel < ApplicationCable::Channel
   end
 
   def speak(data)
-    Message.create(data['message'])
+    user = User.find(data['message']['user_id'])
+    channel = Channel.includes(:users).find(data['message']['conversationable_id'])
+
+    Message.create(data['message']) if (!channel.private || channel.users.include?(user))
   end
 end
