@@ -22,6 +22,8 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token, :default_values
 
   has_many :messages
+  has_many :permissions
+  has_many :channels, through: :permissions
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
