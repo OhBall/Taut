@@ -12,17 +12,11 @@ class MessageList extends React.Component{
   componentDidMount() {
     const { selectedId, receiveMessage } = this.props;
     this.props.requestMessages();
-    if (selectedId){
-      this.props.createChannelSubscription(selectedId, receiveMessage);
-    }
     this.props.requestAllUsers();
   }
 
   componentDidUpdate(){
     const { selectedId, receiveMessage } = this.props;
-    if (selectedId){
-      this.props.createChannelSubscription(selectedId, receiveMessage);
-    }
     document.getElementById('overflow').scrollIntoView({behavior: "smooth"});
   }
 
