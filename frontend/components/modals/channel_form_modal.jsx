@@ -1,5 +1,6 @@
 import React from 'react';
 
+import SearchableUserList from '../forms/searchable_user_list_container';
 class ChannelFormModal extends React.Component {
 
   constructor(props){
@@ -79,12 +80,19 @@ class ChannelFormModal extends React.Component {
         <h5>{"What's this channel about?"}</h5>
         </label>
         <div className='buttons-container'>
-          <button className='cancel' onClick={this.props.clearModal}>Cancel</button>
+          <button
+            className='cancel'
+            onClick={this.props.clearModal}>
+            Cancel
+          </button>
           <button
             className='submit'
             disabled={disabled}
-            onClick={this.submit}>{`${formType} Channel`}</button>
+            onClick={this.submit}>
+            {`${formType} Channel`}
+          </button>
         </div>
+        <SearchableUserList />
       </form>
     );
   }

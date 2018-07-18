@@ -27,7 +27,7 @@ const MessageListItem = ({message, user}) => {
 
   return(
     <li>
-      <div className='profilepicture'/>
+      <div className='profile-picture'/>
       <section className='words'>
         <header className='message-info'>
           <div className='username'>{username}</div>
