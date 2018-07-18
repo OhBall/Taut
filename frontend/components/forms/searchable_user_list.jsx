@@ -1,6 +1,8 @@
 import React from 'react';
 
-import UserListItem from './searchable_user_list_item';
+import SearchableUserListItem from './searchable_user_list_item';
+import SelectedUserListItem from './selected_user_list_item';
+import { findMatchingUsers } from '../../utils/search_util';
 
 class SearchableUserList extends React.Component {
   constructor(props){
@@ -14,11 +16,21 @@ class SearchableUserList extends React.Component {
   }
 
   render(){
-    const { users, findMatchingUsers } = this.props;
+    const { users, selectUser, deselectUser } = this.props;
     const matches = findMatchingUsers(users, this.state.query);
     const matchEls = matches.map(
-       user => <UserListItem key={user.id} user={user} />
+       user => <SearchableUserListItem
+                  key={user.id}
+                  user={user}
+                  selectUser={selectUser} />
     );
+
+    const selectedEls = Object.keys(this.props.selectedUsers).map(
+      userId => <SelectedUserListItem
+                  key={userId}
+                  user={users[userId]}
+                  deselectUser={deselectUser} />
+  );
 
     return(
       <div className='user-search'>
@@ -34,6 +46,7 @@ class SearchableUserList extends React.Component {
           </div>
         </label>
         <ul className='selected-users'>
+          {selectedEls}
         </ul>
         <ul>
           {matchEls}
