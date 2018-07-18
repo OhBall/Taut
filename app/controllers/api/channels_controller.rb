@@ -8,9 +8,11 @@ class Api::ChannelsController < ApplicationController
     if @channel.save
       if @channel.private
         current_user_id = current_user.id
-        permission_params.each do |user_id|
-          unless user_id == current_user_id
-            @channel.permissions.build(user_id: user_id)
+        if params[:permissions]
+          permission_params.each do |user_id|
+            unless user_id == current_user_id
+              @channel.permissions.build(user_id: user_id)
+            end
           end
         end
         @channel.permissions.build(user_id: current_user_id)
@@ -18,7 +20,7 @@ class Api::ChannelsController < ApplicationController
       @channel.save
       render :show
     else
-      render json: @channel.errors.full_messages
+      render json: @channel.errors.full_messages, status: 422
     end
   end
 
