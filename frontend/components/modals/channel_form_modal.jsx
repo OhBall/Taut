@@ -33,22 +33,24 @@ class ChannelFormModal extends React.Component {
     const disabled = !this.state.name;
     const { formType } = this.props;
     const privacy = this.state.private;
-    let privacyStatus;
-    let hideLock = '';
-    let hideHash = '';
+    let privacyToggle;
+    let privacyString = '';
+    let hideOnPublic = '';
+    let hideOnPrivate = '';
     if (privacy) {
-      privacyStatus = 'Private';
-      hideHash = 'hidden';
+      privacyToggle = ' Private';
+      hideOnPrivate = 'hidden';
+      privacyString = ' Private'
     } else {
-      privacyStatus = 'Public';
-      hideLock = 'hidden';
+      privacyToggle = ' Public';
+      hideOnPublic = 'hidden';
     }
 
     return (
       <form className='ChannelForm Modal' onSubmit={this.handleSubmit}>
-        <h1>{`${formType} Channel`}</h1>
+        <h1>{`${formType}${privacyString} Channel`}</h1>
         <h4>{"Channels are where your members communicate. They're best when organized around a topic - #leads, for example."}</h4>
-        <h2>{`Privacy: ${privacyStatus}`}</h2>
+        <h2>{`Privacy:${privacyToggle}`}</h2>
         <label className='switch'>
           <input type='checkbox' onChange={this.toggleCheckbox}/>
           <span className="slider"></span>
@@ -56,8 +58,8 @@ class ChannelFormModal extends React.Component {
         <label>
           <h2>Name</h2>
           <div className='input-container'>
-            <span className={hideHash}>#</span>
-            <span className={hideLock}>&#128274;</span>
+            <span className={hideOnPrivate}>#</span>
+            <span className={hideOnPublic}>&#128274;</span>
             <input
               type='text'
               placeholder='e.g. leads'
@@ -89,10 +91,12 @@ class ChannelFormModal extends React.Component {
             className='submit'
             disabled={disabled}
             onClick={this.submit}>
-            {`${formType} Channel`}
+            {`${formType}${privacyString} Channel`}
           </button>
         </div>
-        <SearchableUserList />
+        <section class={hideOnPublic}>
+          <SearchableUserList />
+        </section>
       </form>
     );
   }

@@ -16,19 +16,19 @@ $divider-grey: #e8e9e8;
   margin-top: 0;
 }
 
-.user-list-item {
+.searchable-user-list-item {
   display: flex;
   align-items: center;
   border-top: 1px solid $divider-grey;
   padding: 5px 0;
 }
-.user-list-item:hover {
+.searchable-user-list-item:hover {
   background-color: $hover-blue;
   border-color: $border-blue;
   border-radius: 5px
 }
 
-.user-list-item h1{
+.searchable-user-list-item h1{
   font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-size: 16px;
@@ -36,7 +36,7 @@ $divider-grey: #e8e9e8;
   margin: 0 5px;
 }
 
-.user-list-item h2{
+.searchable-user-list-item h2{
   margin: 0 5px;
 }
 // .user-search ul li
