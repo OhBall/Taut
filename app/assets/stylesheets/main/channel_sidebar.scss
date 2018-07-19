@@ -43,18 +43,18 @@ $selected-green: #4b9688;
   cursor: pointer;
 }
 
-.channel-list > header {
+.channel-sidebar > ul > header {
   display: flex;
   align-items: center;
   box-sizing: border-box;
   justify-content: space-between;
 }
 
-.channel-list > header > span {
+.channel-sidebar > ul > header > span {
   font-size: 23px;
 }
 
-.channel-list > header:hover {
+.channel-sidebar > ul > header:hover {
   color: white;
 }
 
