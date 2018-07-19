@@ -1,10 +1,12 @@
 import React from 'react';
+
 import ChannelList from './channel_list_container';
 import DmList from '../dm-list/dm_list_container';
 
 class ConversationSidebar extends React.Component{
-  constructor(props){
-    super(props);
+
+  componentDidMount(){
+    this.props.requestChannels();
   }
 
   render(){
