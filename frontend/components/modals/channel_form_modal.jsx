@@ -35,13 +35,11 @@ class ChannelFormModal extends React.Component {
     const { formType } = this.props;
     const privacy = this.state.private;
     let privacyToggle;
-    let privacyString = '';
     let hideOnPublic = '';
     let hideOnPrivate = '';
     if (privacy) {
       privacyToggle = ' Private';
       hideOnPrivate = 'hidden';
-      privacyString = ' Private';
     } else {
       privacyToggle = ' Public';
       hideOnPublic = 'hidden';
@@ -49,7 +47,7 @@ class ChannelFormModal extends React.Component {
 
     return (
       <form className='channel-form modal-form' onSubmit={this.handleSubmit}>
-        <h1>{`${formType}${privacyString} Channel`}</h1>
+        <h1>{`${formType}${privacyToggle} Channel`}</h1>
         <h4>{"Channels are where your members communicate. They're best when organized around a topic - #leads, for example."}</h4>
         <h2>{`Privacy:${privacyToggle}`}</h2>
         <label className='switch'>
@@ -92,7 +90,7 @@ class ChannelFormModal extends React.Component {
             className='submit'
             disabled={disabled}
             onClick={this.submit}>
-            {`${formType}${privacyString} Channel`}
+            {`${formType}${privacyToggle} Channel`}
           </button>
         </div>
         <section className={hideOnPublic}>
