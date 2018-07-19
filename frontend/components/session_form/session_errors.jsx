@@ -1,20 +1,13 @@
-import React from 'react';
+import { connect } from 'react-redux';
+import Errors from './errors.jsx';
 
-const SessionErrors = props => {
-
-  const { errors, hidden } = props;
-  const errorLis = errors.map( (error, idx) => {
-    return <li key={idx}>{error}</li>;
-  });
-
-  return(
-    <div className={`errors-container ${hidden}`}>
-      <i>&#9888;</i>
-      <ul className={'errors'}>
-        {errorLis}
-      </ul>
-    </div>
-  );
+const mapStateToProps = state => {
+  const errors = state.errors.session;
+  const hidden = errors.length === 0 ? 'hidden' : '';
+  return {
+    errors,
+    hidden,
+  };
 };
 
-export default SessionErrors;
+export default connect(mapStateToProps)(Errors);

@@ -39,11 +39,9 @@ class SessionForm extends React.Component {
                            Sign in as guest
                          </button>; }
 
-    const hidden = errors.length === 0 ? 'hidden' : '';
-
     return (
       <div className='session'>
-        <SessionErrors errors={errors} hidden={hidden}/>
+        <SessionErrors />
         <div className='form-container'>
           <h1>{formType} to Taut</h1>
           <h2 id='session-form-subhead'>'slack-to-taut.heroku.com'</h2>
