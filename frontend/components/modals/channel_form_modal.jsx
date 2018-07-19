@@ -1,6 +1,7 @@
 import React from 'react';
 
 import SearchableUserList from '../forms/searchable_user_list_container';
+
 class ChannelFormModal extends React.Component {
 
   constructor(props){
@@ -47,7 +48,7 @@ class ChannelFormModal extends React.Component {
     }
 
     return (
-      <form className='ChannelForm Modal' onSubmit={this.handleSubmit}>
+      <form className='channel-form modal-form' onSubmit={this.handleSubmit}>
         <h1>{`${formType}${privacyString} Channel`}</h1>
         <h4>{"Channels are where your members communicate. They're best when organized around a topic - #leads, for example."}</h4>
         <h2>{`Privacy:${privacyToggle}`}</h2>
