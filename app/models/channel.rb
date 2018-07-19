@@ -8,6 +8,7 @@
 #  name        :string           not null
 #  private     :boolean          default(FALSE), not null
 #  description :string
+#  is_dm       :boolean          default(FALSE), not null
 #
 
 class Channel < ApplicationRecord
