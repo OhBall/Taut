@@ -11,7 +11,6 @@ const mapStateToProps = state =>{
 };
 
 const mapDispatchToProps = dispatch => {
-  //// TODO: add createPermission
   return {
     selectUser: userId => dispatch(selectUser(userId)),
     deselectUser: userId => dispatch(deselectUser(userId)),
