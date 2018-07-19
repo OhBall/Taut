@@ -110,14 +110,3 @@ $error-red: #d82b3f;
 .modal .buttons-container .cancel {
   border: 1px solid $light-grey-border;
 }
-
-.modal .buttons-container .submit{
-  color: white;
-  background-color: $button-green;
-}
-.modal .buttons-container .submit:disabled {
-  color: $dark-grey-text;
-  background-color: $light-grey-background;
-  border: none;
-  cursor: default;
-}

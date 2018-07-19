@@ -1,6 +1,9 @@
 $light-black: #2c2e30;
 $cancel-grey: #717274;
 $light-grey-background: #e8e9e8;
+$button-green: #008951;
+$dark-grey-text: #606162;
+
 
 .modal {
   position: absolute;
@@ -39,4 +42,15 @@ $light-grey-background: #e8e9e8;
 .modal > div {
   display: flex;
   flex-direction: column;
+}
+
+.modal .submit{
+  color: white;
+  background-color: $button-green;
+}
+.modal .submit:disabled {
+  color: $dark-grey-text;
+  background-color: $light-grey-background;
+  border: none;
+  cursor: default;
 }
