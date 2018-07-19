@@ -16,10 +16,16 @@ class SearchableUserList extends React.Component {
   }
 
   render(){
-    const { users, selectedUsers, selectUser, deselectUser  } = this.props;
+    const { users,
+            selectedUsers,
+            currentUserId,
+            selectUser,
+            deselectUser } = this.props;
+
     const matches = findMatchingUsers(users, this.state.query);
     const nonselectedMatches = matches.filter(user => {
-      return !Object.values(selectedUsers).includes(user.id);
+      return (!Object.values(selectedUsers).includes(user.id) &&
+              user.id !== currentUserId);
     });
 
     const matchEls = nonselectedMatches.map(
