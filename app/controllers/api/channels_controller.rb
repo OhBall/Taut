@@ -1,6 +1,6 @@
 class Api::ChannelsController < ApplicationController
   def index
-    @channels = Channel.all.includes(:messages)
+    @channels = Channel.all
   end
 
   def create
