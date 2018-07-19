@@ -1,0 +1,12 @@
+.dm-list {
+  margin-top: 18px;
+}
+
+.dm-list * {
+  cursor: pointer;
+}
+
+.dm-list > * {
+  min-height: 26px;
+  padding: 0 15px;
+}
