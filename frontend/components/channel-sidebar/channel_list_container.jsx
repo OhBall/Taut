@@ -13,6 +13,7 @@ const mapStateToProps = state => {
   return {
     channels: state.entities.channels,
     selectedId: state.ui.sidebar.selectedId,
+    permissions: state.entities.permissions,
   };
 };
 

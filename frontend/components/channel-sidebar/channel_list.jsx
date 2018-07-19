@@ -11,11 +11,15 @@ class ChannelList extends React.Component{
   render(){
     const channelEls = Object.values(this.props.channels).map( channel => {
       const selected = channel.id === this.props.selectedId ? 'selected' : '';
-      return <ChannelListItem
-        key={channel.id}
-        channel={channel}
-        selected={selected}
-        selectChannel={this.props.selectChannel} />;
+      if (!channel.private || this.props.permissions[channel.id]){
+        return <ChannelListItem
+          key={channel.id}
+          channel={channel}
+          selected={selected}
+          selectChannel={this.props.selectChannel} />;
+      } else {
+        return '';
+      }
     });
 
     return (

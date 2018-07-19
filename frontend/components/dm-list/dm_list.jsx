@@ -6,7 +6,7 @@ class DmList extends React.Component {
   render() {
 
     return (
-      1
+      ''
     );
   }
 
