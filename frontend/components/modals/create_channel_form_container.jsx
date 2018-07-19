@@ -11,6 +11,7 @@ const mapStateToProps = state => {
     description: '',
     private: false,
     selectedUsers: state.ui.selectedUsers,
+    errors: state.errors.channel,
   };
 };
 

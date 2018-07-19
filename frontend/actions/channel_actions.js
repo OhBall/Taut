@@ -49,7 +49,7 @@ export const createChannel = (channel, permitIds) =>
   dispatch => {
     return ChannelApiUtil.createChannel(channel, permitIds).then(
       receivedChannel => dispatch(receiveChannel(receivedChannel)),
-      errors => dispatch(receiveErrors(errors))
+      ({responseJSON}) => dispatch(receiveErrors(responseJSON))
     );
   };
 
