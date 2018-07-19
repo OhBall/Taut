@@ -17,7 +17,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    requestMessages: messages => dispatch(requestMessages()),
+    requestMessages: channelId => dispatch(requestMessages(channelId)),
     receiveMessage: message => dispatch(receiveMessage(message)),
     requestAllUsers: () => dispatch(requestAllUsers()),
     createChannelSubscription,

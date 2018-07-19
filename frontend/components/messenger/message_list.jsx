@@ -11,8 +11,13 @@ class MessageList extends React.Component{
 
   componentDidMount() {
     const { selectedId, receiveMessage } = this.props;
-    this.props.requestMessages();
     this.props.requestAllUsers();
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (this.props.selectedId !== newProps.selectedId){
+      this.props.requestMessages(newProps.selectedId);
+    }
   }
 
   componentDidUpdate(){
