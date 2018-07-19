@@ -16,6 +16,6 @@ export const createMessage = message => {
 export const deleteMessage = messageId => {
   return $.ajax({
     method: 'DELETE',
-    url: `api/messages/$(messageId)`,
+    url: `api/messages/${messageId}`,
   });
 };

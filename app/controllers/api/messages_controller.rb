@@ -13,6 +13,14 @@ class Api::MessagesController < ApplicationController
     end
   end
 
+  def destroy
+    @message = Message.find(params[:id])
+    if @message
+      @message.delete
+      render :show
+    end
+  end
+
   private
   def message_params
     params.require(:message).permit(:body, :conversationable_id, :conversationable_type)

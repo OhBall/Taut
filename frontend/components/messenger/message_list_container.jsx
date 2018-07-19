@@ -10,7 +10,7 @@ const mapStateToProps = state => {
   return {
     messages: state.entities.messages,
     users: state.entities.users,
-    currentUserId: state.session.currentUser,
+    currentUserId: state.session.id,
     selectedId: state.ui.sidebar.selectedId,
   };
 };

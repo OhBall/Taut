@@ -2,7 +2,7 @@ import * as MessageApiUtil from  '../utils/messages_api_util.js';
 
 export const RECEIVE_MESSAGES = 'RECEIVE_MESSAGES';
 export const RECEIVE_MESSAGE = 'RECEIVE_MESSAGE';
-
+export const REMOVE_MESSAGE = 'REMOVE_MESSAGE';
 
 export const receiveMessages = messages => {
   return {
@@ -14,13 +14,25 @@ export const receiveMessages = messages => {
 export const receiveMessage = message => {
   return {
     type: RECEIVE_MESSAGE,
-    message
+    message,
   };
+};
+
+export const removeMessage = message => {
+  return {
+    type: REMOVE_MESSAGE,
+    message,
+  };
+};
+
+export const deleteMessage = id => dispatch => {
+  return MessageApiUtil.deleteMessage(id).then(
+    message => dispatch(removeMessage(message))
+  );
 };
 
 export const requestMessages = () => dispatch => {
   return MessageApiUtil.fetchMessages().then(
-    messages => dispatch(receiveMessages(messages)),
-    () => console.log('NOOOOO')
+    messages => dispatch(receiveMessages(messages))
   );
 };

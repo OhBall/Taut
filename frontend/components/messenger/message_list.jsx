@@ -27,7 +27,11 @@ class MessageList extends React.Component{
     });
     const messageEls = relevantMessages.map( message => {
       const user = this.props.users[message.user_id];
-      return <MessageListItem key={message.id} message={message} user={user}/>;
+      return <MessageListItem
+                key={message.id}
+                message={message}
+                user={user}
+                currentUserId={this.props.currentUserId} />;
     });
 
     return(
