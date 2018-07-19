@@ -35,3 +35,8 @@ $light-grey-background: #e8e9e8;
 .modal > button:hover {
   background-color: $light-grey-background;
 }
+
+.modal > div {
+  display: flex;
+  flex-direction: column;
+}
