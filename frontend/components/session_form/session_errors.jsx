@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Errors from './errors.jsx';
+import Errors from '../errors/errors.jsx';
 
 const mapStateToProps = state => {
   const errors = state.errors.session;
