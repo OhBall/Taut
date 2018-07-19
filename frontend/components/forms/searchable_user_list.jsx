@@ -39,7 +39,6 @@ class SearchableUserList extends React.Component {
     return(
       <div className='user-search'>
         <label>
-          <h2>Participants</h2>
           <div className='input-container'>
             <input
               className='user-searchbar'
@@ -49,6 +48,7 @@ class SearchableUserList extends React.Component {
               onChange={this.updateSearch} />
           </div>
         </label>
+        <h2>Participants</h2>
         <ul className='selected-users'>
           {selectedEls}
         </ul>
