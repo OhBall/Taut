@@ -1,4 +1,5 @@
 import React from 'react';
+import Promise from 'promise';
 
 import SessionErrors from './session_errors';
 
@@ -8,6 +9,7 @@ class SessionForm extends React.Component {
     this.state = {email: '', password: ''};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.loginAsGuest = this.loginAsGuest.bind(this);
+    this.loginAsGuestHelper = this.loginAsGuestHelper.bind(this);
   }
 
   componentDidMount() {
@@ -25,9 +27,31 @@ class SessionForm extends React.Component {
     this.props.processForm(this.state);
   }
 
-  loginAsGuest(){
-    const guestUser = {email: 'guest@guest.com', password: 'hunter2'};
-    this.props.processForm(guestUser);
+  loginAsGuest() {
+    const emailArr = 'guest@guest.com'.split('');
+    const passwordArr = 'hunter2'.split('');
+    const button = document.getElementById('login');
+    this.loginAsGuestHelper(emailArr, passwordArr, button);
+  }
+
+  loginAsGuestHelper(emailArr, passwordArr, button){
+    if (emailArr.length > 0) {
+      this.setState(
+        { email: this.state.email + emailArr.shift() }, () => {
+          window.setTimeout( () =>
+            this.loginAsGuestHelper(emailArr, passwordArr, button), 75);
+        }
+      );
+    } else if (passwordArr.length > 0) {
+      this.setState(
+        { password: this.state.password + passwordArr.shift() }, () => {
+          window.setTimeout( () =>
+            this.loginAsGuestHelper(emailArr, passwordArr, button), 100);
+        }
+      );
+    } else {
+      button.click();
+    }
   }
 
   render(){
@@ -59,7 +83,7 @@ class SessionForm extends React.Component {
               onChange={this.update('password')}
               placeholder='password'/>
 
-            <input type='submit' value={formType}/>
+            <input id='login' type='submit' value={formType}/>
           </form>
           {guestLoginButton}
         </div>
