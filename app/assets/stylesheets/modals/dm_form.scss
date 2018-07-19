@@ -1,0 +1,16 @@
+$light-grey-background: #e8e9e8;
+$light-grey-border: #c6c6c7;
+$dark-grey-text: #606162;
+
+
+.dm-form button {
+  height: 50px;
+  padding: 0 18px;
+  margin-right: 16px;
+
+  border-radius: 5px;
+}
+
+.dm-form .cancel {
+  border: 1px solid $light-grey-border;
+}
