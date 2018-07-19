@@ -1,3 +1,5 @@
+$hover-grey: #f9f9f9;
+
 #message-list {
   max-height: calc(100% - 122px);
   width: 100%;
@@ -12,14 +14,26 @@
 #message-list li {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   flex-shrink: 0;
   padding: 6px 0;
+  width: 100%;
+}
+
+#message-list li:hover {
+  background-color: $hover-grey;
 }
 
 #message-list section {
   display: flex;
   flex-direction: column;
+  width: 100%;
+}
+
+.message-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .message-info {
@@ -28,8 +42,8 @@
   align-items: flex-end;
 }
 
-.message-info div {
-  display: block;
+.message-header button {
+  margin-right: 20px;
 }
 
 #message-list .username {
