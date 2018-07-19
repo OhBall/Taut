@@ -19,6 +19,7 @@ $light-grey-background: #e8e9e8;
 .modal > button {
   height: 64px;
   width: 64px;
+  z-index: 2;
 
   color: $cancel-grey;
   font-size: 40px;
