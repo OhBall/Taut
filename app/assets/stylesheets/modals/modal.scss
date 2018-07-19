@@ -38,6 +38,10 @@ $dark-grey-text: #606162;
 .modal > button:hover {
   background-color: $light-grey-background;
 }
+.modal > button:active {
+  color: white;
+  background-color: $button-green;
+}
 
 .modal > div {
   display: flex;
