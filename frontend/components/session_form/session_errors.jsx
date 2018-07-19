@@ -8,9 +8,9 @@ const SessionErrors = props => {
   });
 
   return(
-    <div className={`session-errors-container ${hidden}`}>
+    <div className={`errors-container ${hidden}`}>
       <i>&#9888;</i>
-      <ul className={'session-errors'}>
+      <ul className={'errors'}>
         {errorLis}
       </ul>
     </div>

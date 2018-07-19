@@ -25,7 +25,7 @@ $link-blue: #0576b9;
   text-decoration: underline ;
 }
 
-.form-container, .session-errors-container {
+.form-container, .errors-container {
   width: 636px;
   margin: 0 auto;
   margin-bottom: 32px;
@@ -87,7 +87,7 @@ $link-blue: #0576b9;
   margin-top: 10px
 }
 
-.session-errors-container {
+.errors-container {
   display: flex;
   flex-direction: row;
   justify-content: left;
@@ -99,7 +99,7 @@ $link-blue: #0576b9;
   margin-bottom: 16px;
 }
 
-.session-errors-container i {
+.errors-container i {
   position: relative;
   top: 2px;
   color: $error-red;
@@ -107,12 +107,12 @@ $link-blue: #0576b9;
   margin: 0 15px;
 }
 
-.session-errors {
+.errors {
   justify-content: center;
 
 }
 
-.session-errors li {
+.errors li {
   text-align: left;
   box-sizing: content-box;
 }
