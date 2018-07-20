@@ -4,6 +4,7 @@ Taut is a Slack clone built using a Rails backend and React/Redux frontend frame
 Taut utilizes Rails Action Cables to implement its WebSocketing.
 When a user logs in, the frontend creates a subscription for every public channel and channel for which the user has permission to access.
 ```
+#frontend/utils/channel_api_util.js
 export const createChannelSubscription = (channelId, receiveMessage) => {
   App[channelId] = App.cable.subscriptions.create(
     {channel: "Workspace1Channel", id: channelId},
@@ -21,6 +22,9 @@ export const createChannelSubscription = (channelId, receiveMessage) => {
 
 On the backend, channel specific streams are created:
 ```
-channel_room = Channel.find(@params['id'])
-stream_for channel_room if (!channel_room.private || channel_room.users.include?(current_user))
+#app/channels/workspace1_channel.rb
+def subscribed
+  channel_room = Channel.find(@params['id'])
+  stream_for channel_room if (!channel_room.private || channel_room.users.include?(current_user))
+end
 ```
