@@ -1,5 +1,5 @@
 import React from 'react';
-import DmListItem from './dm_list_item';
+import DmListItem from './dm_list_item_container';
 
 class DmList extends React.Component {
 
@@ -8,13 +8,11 @@ class DmList extends React.Component {
       convo =>  convo.is_dm
     );
     const dmEls = dms.map( dm => {
-      const selected = dm.id === this.props.selectedId ? 'selected' : '';
       if (this.props.permissions[dm.id]){
         return <DmListItem
                   key={dm.id}
                   dm={dm}
-                  selected={selected}
-                  selectChannel={this.props.selectChannel} />;
+                />;
       } else {
         return '';
       }
