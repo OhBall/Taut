@@ -11,6 +11,7 @@ class ChannelFormModal extends React.Component {
       name: props.name,
       description: props.description,
       private: props.private,
+      is_dm: false,
     };
     this.update = this.update.bind(this);
     this.submit = this.submit.bind(this);
