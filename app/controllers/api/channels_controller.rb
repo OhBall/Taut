@@ -5,10 +5,11 @@ class Api::ChannelsController < ApplicationController
 
   def create
     current_user_id = current_user.id
-    permissions = permission_params.map { |id| id.to_i  }
-    permissions.push(current_user_id)
 
-    if (channel_params[:is_dm])
+    permissions = [current_user_id]
+    permissions.concat(permission_params.map { |id| id.to_i  }) if params[:permissions]
+
+    if (channel_params[:is_dm] == 'true')
       @channel = Channel.find_by_permitted_users(
         permissions.map { |id| id.to_i  }
       )
@@ -19,17 +20,15 @@ class Api::ChannelsController < ApplicationController
 
     if @channel.save
       if @channel.private && is_new
-        if params[:permissions]
-          permission_params.each do |user_id|
-            unless user_id == current_user_id
-              @channel.permissions.build(user_id: user_id)
-            end
-          end
+        permissions.each do |user_id|
+          @channel.permissions.build(user_id: user_id)
         end
-        @channel.permissions.build(user_id: current_user_id)
       end
-      @channel.save
-      render :show
+      if @channel.save
+        render :show
+      else
+        render json: @channel.errors.full_messages, status: 422
+      end
     else
       render json: @channel.errors.full_messages, status: 422
     end
