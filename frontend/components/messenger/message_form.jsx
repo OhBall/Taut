@@ -39,7 +39,8 @@ class MessageForm extends React.Component {
         <form className='message-form'>
           <textarea value={this.state.body}
             onChange={this.update}
-            onKeyPress={this.handleKeyPress}/>
+            onKeyPress={this.handleKeyPress}
+            placeholder='Message'/>
         </form>
       </footer>
     );
