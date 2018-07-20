@@ -31,7 +31,9 @@ class SessionForm extends React.Component {
     const emailArr = 'guest@guest.com'.split('');
     const passwordArr = 'hunter2'.split('');
     const button = document.getElementById('login');
-    this.loginAsGuestHelper(emailArr, passwordArr, button);
+    this.setState({email: '', password: ''}, () =>
+      this.loginAsGuestHelper(emailArr, passwordArr, button)
+    );
   }
 
   loginAsGuestHelper(emailArr, passwordArr, button){

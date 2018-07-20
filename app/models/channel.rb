@@ -18,8 +18,10 @@ class Channel < ApplicationRecord
   has_many :permissions
   has_many :users, through: :permissions
 
-  //# TODO: implement a 'ensure_subscribed' method that makes sure that a user
-    # =>    is subscribed to a channel before they make a message that belongs
-    # =>    to that channel. Note: This todo is also located in Message.rb
+  def self.find_by_permitted_users (user_ids)
+    Channel.where(is_dm: true).each do |channel|
+      return channel if channel.user_ids.sort() == user_ids.sort()
+    end
+  end
 
 end
