@@ -44,7 +44,7 @@ Because of the changing size of the message list, scrolling a fixed amount to
 the bottom of the page proved impractical. Instead, an undisplayed div is rendered
 at the bottom of the page, which is used as an anchor point for autoscrolling.
 
-## To do
+## To Do
 * Display more information in the messenger header
 * Ability to edit messages
 * Ability to delete channels and dms
