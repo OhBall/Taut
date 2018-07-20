@@ -12,15 +12,24 @@ const mapStateToProps = state => (
 
 const mapDispatchToProps = dispatch => {
   return {
-    createChannel: channel => dispatch(createChannel()),
+    createChannel: (channel, permissions) =>
+      dispatch(createChannel(channel, permissions)),
     clearModal: () => dispatch(clearModal()),
   };
 };
 
 class DmFormModal extends React.Component {
 
-  Submit() {
-    this.props.createChannel({name: 'DM'}, this.props.selectedUsers);
+  constructor(props){
+    super(props);
+    this.submit = this.submit.bind(this);
+  }
+
+  submit() {
+    this.props.createChannel(
+      {name: 'DM', is_dm: true, private: true},
+      this.props.selectedUsers
+    );
   }
 
   render() {
@@ -30,6 +39,7 @@ class DmFormModal extends React.Component {
         <h1>Direct Messages</h1>
         <button
           className='submit'
+          onClick={this.submit}
           disabled={disabled}>
           {'Create DM'}
         </button>
