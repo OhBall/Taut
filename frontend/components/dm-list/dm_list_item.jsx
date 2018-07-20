@@ -29,7 +29,9 @@ class DmListItem extends React.Component{
 
     const otherUsers = dm.user_ids.filter(
        userId => userId !== currentUserId
-     ).map( userId => users[userId].username );
+     ).map( userId => {
+       if(users[userId]) return users[userId].username;
+     });
 
     return (
       <li className={selected} onClick={this.handleSelection}>
