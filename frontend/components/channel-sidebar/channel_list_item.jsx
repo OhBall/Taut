@@ -1,7 +1,5 @@
 import React from 'react';
-
 import { createChannelSubscription } from '../../utils/channel_api_util';
-
 
 class ChannelListItem extends React.Component {
 
@@ -23,10 +21,11 @@ class ChannelListItem extends React.Component {
   }
 
   render() {
-    const { channel, selected, selectChannel } = this.props;
+    const { channel, selectChannel, selectedId } = this.props;
 
     const hideOnPublic = channel.private ? '' : 'hidden';
     const hideOnPrivate = channel.private ? 'hidden' : '';
+    const selected = channel.id === selectedId ? 'selected' : '';
 
     return (
       <li className={selected} onClick={this.handleSelection}>

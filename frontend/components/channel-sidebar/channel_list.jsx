@@ -9,13 +9,11 @@ class ChannelList extends React.Component{
       convo =>  !convo.is_dm
     );
     const channelEls = channels.map( channel => {
-      const selected = channel.id === this.props.selectedId ? 'selected' : '';
       if (!channel.private || this.props.permissions[channel.id]){
         return <ChannelListItem
                   key={channel.id}
                   channel={channel}
-                  selected={selected}
-                  selectChannel={this.props.selectChannel} />;
+                 />;
       } else {
         return '';
       }
