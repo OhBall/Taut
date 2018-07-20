@@ -7,7 +7,7 @@ class Api::ChannelsController < ApplicationController
     current_user_id = current_user.id
 
     permissions = [current_user_id]
-    permissions.concat(permission_params.map { |id| id.to_i  }) if params[:permissions]
+    permissions.concat(permission_params.map(&:to_i)) if params[:permissions]
 
     if (channel_params[:is_dm] == 'true')
       @channel = Channel.find_by_permitted_users(
