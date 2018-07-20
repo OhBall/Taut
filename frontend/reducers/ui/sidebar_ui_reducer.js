@@ -1,5 +1,5 @@
 import { SELECT_CHANNEL } from '../../actions/ui_actions.js';
-import { RECEIVE_CHANNELS } from '../../actions/channel_actions.js';
+import { RECEIVE_CHANNELS, RECEIVE_CHANNEL } from '../../actions/channel_actions.js';
 import { merge } from 'lodash';
 
 const SelectionUiReducer = (state = {}, action) => {
@@ -8,8 +8,9 @@ const SelectionUiReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_CHANNELS:
       const firstId = Object.values(action.channels)[0].id;
-      merge(copyState, {selectedId: firstId});
-      return copyState;
+      return {selectedId: firstId};
+    case RECEIVE_CHANNEL:
+      return {selectedId: action.channel.id};
     case SELECT_CHANNEL:
       merge(copyState, {selectedId: action.channelId});
       return copyState;

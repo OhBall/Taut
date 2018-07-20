@@ -2,6 +2,7 @@ import { merge } from 'lodash';
 
 import { SELECT_USER, UNSELECT_USER } from '../../actions/ui_actions';
 import { CLEAR_MODAL } from '../../actions/modal_actions.js';
+import { RECEIVE_CHANNEL } from '../../actions/channel_actions';
 
 const SelectedUsersUiReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -13,6 +14,7 @@ const SelectedUsersUiReducer = (state = {}, action) => {
     case UNSELECT_USER:
       delete copyState[action.userId];
       return copyState;
+    case RECEIVE_CHANNEL:
     case CLEAR_MODAL:
       return {};
     default:
