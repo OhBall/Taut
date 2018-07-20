@@ -1,6 +1,7 @@
 $light-black: #2c2d30;
 $light-grey-border: #e8e8e8;
 $slack-green: #108851;
+$hover-green: #34a075;
 $background-cream: #f9f9f9;
 $error-red: #d82b3f;
 $link-blue: #0576b9;
@@ -85,6 +86,11 @@ $link-blue: #0576b9;
 
 .form-container button {
   margin-top: 10px
+}
+
+.form-container form input[type="submit"]:hover, .form-container button:hover {
+  background-color: $hover-green;
+  box-shadow: 0 2px 2px 0 #d4d4d4;
 }
 
 .errors-container {
