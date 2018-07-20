@@ -67,18 +67,22 @@ $selected-green: #4b9688;
   background-color: $hover-purple;
 }
 
-.channel-sidebar li span {
+.channel-sidebar span {
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 0 5px;
+}
+
+.channel-sidebar span:nth-child(3){
+  text-align: left;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .channel-sidebar li .lock {
-  padding-left: 0;
+  padding: 0;
 }
 
 .channel-sidebar .selected {
