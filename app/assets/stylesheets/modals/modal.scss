@@ -2,7 +2,9 @@ $light-black: #2c2e30;
 $cancel-grey: #717274;
 $light-grey-background: #e8e9e8;
 $button-green: #008951;
+$hover-green: #34a075;
 $dark-grey-text: #606162;
+$shadow-grey: #d4d4d4;
 
 
 .modal {
@@ -48,13 +50,22 @@ $dark-grey-text: #606162;
   flex-direction: column;
 }
 
+.modal .cancel:hover {
+  box-shadow: 0 1px 2px 0 $shadow-grey;
+}
+
 .modal .submit{
   color: white;
   background-color: $button-green;
 }
+.modal .submit:hover{
+  background-color: $hover-green;
+  box-shadow: 0 1px 2px 0 $shadow-grey;
+}
 .modal .submit:disabled {
   color: $dark-grey-text;
   background-color: $light-grey-background;
+  box-shadow: none;
   border: none;
   cursor: default;
 }
