@@ -58,34 +58,34 @@ $selected-green: #4b9688;
   color: white;
 }
 
-.channel-list li span{
-  padding: 0 5px;
-}
-
-.channel-list li {
+.channel-sidebar li {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.channel-list li:hover {
+.channel-sidebar li:hover {
   background-color: $hover-purple;
 }
 
-.channel-list li span {
+.channel-sidebar li span {
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 0 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.channel-list li .lock {
+.channel-sidebar li .lock {
   padding-left: 0;
 }
 
-.channel-list .selected {
+.channel-sidebar .selected {
   color: white;
   background-color: $selected-green;
 }
-.channel-list .selected:hover {
+.channel-sidebar .selected:hover {
   color: white;
   background-color: $selected-green;
 }
