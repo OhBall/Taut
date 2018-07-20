@@ -35,7 +35,7 @@ end
 
 ## Schema
 Originally, the plan was to use several polymorphic associations to implement
-both, but during development I realized that, functionally, private channels
+channels and dms separately, but during development I realized that, functionally, private channels
 and direct message conversations are almost identical. Because of this, I
 opted to simply add an is_dm property to the channel table.
 
