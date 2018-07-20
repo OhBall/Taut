@@ -19,7 +19,7 @@ class Channel < ApplicationRecord
   has_many :users, through: :permissions
 
   def self.find_by_permitted_users (user_ids)
-    Channel.where(is_dm: true).each do |channel|
+    Channel.where(is_dm: true).find do |channel|
       return channel if channel.user_ids.sort() == user_ids.sort()
     end
   end
