@@ -47,7 +47,7 @@ at the bottom of the page, which is used as an anchor point for autoscrolling.
 ## Known-Issues:
 * Pressing enter in modal forms will close the modal without submitting the form.
 
-## To Do
+## Future improvements
 * Display more information in the messenger header
 * Ability to edit messages
 * Ability to delete channels and dms
