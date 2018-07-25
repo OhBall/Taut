@@ -8,6 +8,8 @@ const mapStateToProps = state => {
    {name: '', description: ''};
   return {
     selectedConvo,
+    users: state.entities.users,
+    currentUserId: state.session.id,
   };
 };
 

@@ -13,4 +13,8 @@
 
 .dm-list li span {
   padding-left: 25px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
