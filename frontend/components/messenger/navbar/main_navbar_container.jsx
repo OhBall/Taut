@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 
 import MainNavbar from './main_navbar';
+import { deleteChannel } from '../../../actions/channel_actions';
 
 const mapStateToProps = state => {
   const selectedId = state.ui.sidebar.selectedId;
@@ -13,4 +14,10 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(MainNavbar);
+const mapDispatchToProps = dispatch => {
+  return {
+    deleteChannel: channelId => dispatch(deleteChannel(channelId)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainNavbar);
