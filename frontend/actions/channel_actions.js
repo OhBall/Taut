@@ -19,10 +19,13 @@ export const receiveChannel = channel => {
   };
 };
 
-export const removeChannel = ({ id }) => {
+export const removeChannel = (payload) => {
+  const { removedChannel, general } = payload;
+
   return {
     type: REMOVE_CHANNEL,
-    id,
+    removedChannel,
+    general,
   };
 };
 
@@ -55,6 +58,6 @@ export const createChannel = (channel, permitIds) =>
 
 export const deleteChannel = id => dispatch => {
   return ChannelApiUtil.deleteChannel(id).then(
-    deletedChannel => dispatch(removeChannel(deletedChannel))
+    payload => dispatch(removeChannel(payload))
   );
 };
