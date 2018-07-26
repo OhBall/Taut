@@ -18,6 +18,8 @@ class Channel < ApplicationRecord
   has_many :permissions
   has_many :users, through: :permissions
 
+  after_destroy :destroy_messages
+
   def self.find_by_permitted_users (user_ids)
     Channel.where(is_dm: true).find do |channel|
       return channel if channel.user_ids.sort() == user_ids.sort()
@@ -27,5 +29,9 @@ class Channel < ApplicationRecord
   def check_permissions
     !self.private || self.permissions.find_by(user_id: current_user.id)
   end
-  
+
+  private
+  def destroy_messages
+    self.messages.destroy_all
+  end
 end
