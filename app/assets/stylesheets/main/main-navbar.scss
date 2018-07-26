@@ -9,8 +9,9 @@ $light-grey-text: #717274;
   box-sizing: border-box;
   padding-left: 20px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .main-navbar h1 {
