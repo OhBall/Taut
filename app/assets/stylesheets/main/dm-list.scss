@@ -1,3 +1,7 @@
+$sidebar-purple: #4b394b;
+$dull-white: #cac4c9;
+$purple-white: #9c919b;
+
 .dm-list {
   margin-top: 18px;
 }
@@ -12,9 +16,19 @@
 }
 
 .dm-list li span {
-  padding-left: 25px;
   text-align: left;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.dm-list li span:nth-child(1) {
+  min-width: 15px;
+  width: 15px;
+  color: $sidebar-purple;
+  background-color: $purple-white;
+  border-radius: 5px;
+  display: flex;
+  font-size: 12px;
+  margin: 0 2px;
 }

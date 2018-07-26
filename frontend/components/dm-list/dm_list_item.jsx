@@ -33,8 +33,13 @@ class DmListItem extends React.Component{
        if(users[userId]) return users[userId].username;
      });
 
+    const otherUserCount = (dm.user_ids.length || 1) - 1;
+    const countString = otherUserCount <= 1  ? '' :`${otherUserCount}`;
+
+
     return (
       <li className={selected} onClick={this.handleSelection}>
+        <span>{countString}</span>
         <span>{otherUsers.join(', ')}</span>
       </li>
     );
