@@ -34,6 +34,20 @@ class Api::ChannelsController < ApplicationController
     end
   end
 
+  def destroy
+    @channel = Channel.find(params[:id])
+    @general = Channel.find_by(name: 'general')
+    if @channel && @channel.name != 'general'
+      if @channel.check_permissions
+        @channel.destroy
+        render :destroy
+      else
+        render json: ['Channel not found'], status: 422
+      end
+    else
+      render json: ['You lack permission to delete this channel'], status: 422
+    end
+  end
 
 
   private
