@@ -38,7 +38,7 @@ class Api::ChannelsController < ApplicationController
     @channel = Channel.find(params[:id])
     @general = Channel.find_by(name: 'general')
     if @channel && @channel.name != 'general'
-      if @channel.check_permissions
+      if @channel.check_permissions(current_user.id)
         @channel.destroy
         render :destroy
       else

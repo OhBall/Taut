@@ -26,8 +26,8 @@ class Channel < ApplicationRecord
     end
   end
 
-  def check_permissions
-    !self.private || self.permissions.find_by(user_id: current_user.id)
+  def check_permissions(user_id)
+    !self.private || self.permissions.find_by(user_id: user_id)
   end
 
   private
