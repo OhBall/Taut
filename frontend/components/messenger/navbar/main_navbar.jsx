@@ -5,10 +5,15 @@ class MainNavbar extends React.Component{
   constructor(props){
     super(props);
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
   }
 
   handleDelete(){
     this.props.deleteChannel(this.props.selectedConvo.id);
+  }
+
+  handleEdit(){
+    this.props.editChannelModal();
   }
 
   render(){
@@ -29,13 +34,16 @@ class MainNavbar extends React.Component{
       h2 = selectedConvo.description;
     }
 
+    const hidden = this.props.selectedConvo.is_dm ? 'hidden' : '';
+
     return (
       <header className='main-navbar'>
         <div className='channel-info'>
           <h1>{h1}</h1>
           <h2>{h2}</h2>
         </div>
-        <div className='options'>
+        <div className={`options ${hidden}`}>
+          <button onClick={this.handleEdit}>Edit Channel</button>
           <button onClick={this.handleDelete}>Delete Channel</button>
         </div>
       </header>

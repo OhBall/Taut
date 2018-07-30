@@ -1,6 +1,7 @@
 import { CREATE_CHANNEL_MODAL,
          CREATE_DM_MODAL,
-         CLEAR_MODAL, } from '../../actions/modal_actions.js';
+         CLEAR_MODAL,
+         EDIT_CHANNEL_MODAL } from '../../actions/modal_actions.js';
 
 import { RECEIVE_CHANNEL } from '../../actions/channel_actions.js';
 
@@ -10,6 +11,8 @@ const ModalUIReducer = (state = null, action) => {
       return CREATE_CHANNEL_MODAL;
     case CREATE_DM_MODAL:
       return CREATE_DM_MODAL;
+    case EDIT_CHANNEL_MODAL:
+      return EDIT_CHANNEL_MODAL;
     case CLEAR_MODAL:
     case RECEIVE_CHANNEL:
       return null;
