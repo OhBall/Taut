@@ -1,6 +1,7 @@
 $light-black: #2c2d30;
 $bottom-border-grey: #e5e5e5;
 $light-grey-text: #717274;
+$hover-grey: #f9f9f9;
 
 .main-navbar {
   height: 60px;
@@ -24,4 +25,20 @@ $light-grey-text: #717274;
   font-size: 14px;
   font-weight: 300;
   color: $light-grey-text;
+}
+
+.main-navbar button {
+  color: $light-black;
+  height: 30px;
+
+  padding: 0 10px;
+  margin-right: 20px;
+
+  border: 1px solid $light-black;
+  border-radius: 5px;
+  align-content: center;
+}
+
+.main-navbar button:hover {
+  background-color: $hover-grey;
 }
