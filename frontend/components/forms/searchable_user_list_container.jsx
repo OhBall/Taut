@@ -1,13 +1,17 @@
 import { connect } from 'react-redux';
 
 import SearchableUserList from './searchable_user_list';
-import { selectUser, deselectUser } from '../../actions/ui_actions';
+import { selectUser, selectUsers, deselectUser } from '../../actions/ui_actions';
 
 const mapStateToProps = state =>{
+  const selectedId = state.ui.sidebar.selectedId;
+  const selectedChannel = state.entities.channels[selectedId];
+  const prevUserIds = selectedChannel.user_ids;
   return {
     users: state.entities.users,
     selectedUsers: state.ui.selectedUsers,
     currentUserId: state.session.id,
+    prevUserIds,
   };
 };
 
@@ -15,6 +19,7 @@ const mapDispatchToProps = dispatch => {
   return {
     selectUser: userId => dispatch(selectUser(userId)),
     deselectUser: userId => dispatch(deselectUser(userId)),
+    selectUsers: userIds => dispatch(selectUsers(userIds)),
   };
 };
 

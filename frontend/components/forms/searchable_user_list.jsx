@@ -11,6 +11,10 @@ class SearchableUserList extends React.Component {
     this.updateSearch = this.updateSearch.bind(this);
   }
 
+  componentDidMount(){
+    this.props.selectUsers(this.props.prevUserIds);
+  }
+
   updateSearch(e){
     this.setState({query: e.target.value});
   }

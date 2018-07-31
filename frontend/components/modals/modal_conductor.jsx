@@ -3,11 +3,13 @@ import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
 import CreateChannelForm from './create_channel_form_container';
+import EditChannelForm from './edit_channel_form_container';
 import DmFormModal from './dm_form_modal.jsx';
 
 import { clearModal } from '../../actions/modal_actions';
 import { CREATE_CHANNEL_MODAL,
-         CREATE_DM_MODAL } from '../../actions/modal_actions';
+         CREATE_DM_MODAL,
+         EDIT_CHANNEL_MODAL } from '../../actions/modal_actions';
 
 const mapStateToProps = state => (
   { modal: state.ui.modal }
@@ -32,6 +34,13 @@ const ModalConductor = (props) => {
         <div className='modal'>
           <button onClick={props.clearModal}>&#10005;</button>
           <DmFormModal />
+        </div>
+      );
+    case EDIT_CHANNEL_MODAL:
+      return (
+        <div className='modal'>
+          <button onClick={props.clearModal}>&#10005;</button>
+          <EditChannelForm />
         </div>
       );
     default:

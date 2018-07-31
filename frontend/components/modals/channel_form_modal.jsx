@@ -8,6 +8,7 @@ class ChannelFormModal extends React.Component {
   constructor(props){
     super(props);
     this.state = {
+      id: props.id,
       name: props.name,
       description: props.description,
       private: props.private,
@@ -56,7 +57,9 @@ class ChannelFormModal extends React.Component {
           <h4>{"Channels are where your members communicate. They're best when organized around a topic - #leads, for example."}</h4>
           <h2>{`Privacy:${privacyToggle}`}</h2>
           <label className='switch'>
-            <input type='checkbox' onChange={this.toggleCheckbox}/>
+            <input type='checkbox'
+              checked={this.state.private}
+              onChange={this.toggleCheckbox} />
             <span className="slider"></span>
           </label>
           <label>
