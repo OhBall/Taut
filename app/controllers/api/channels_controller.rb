@@ -54,6 +54,36 @@ class Api::ChannelsController < ApplicationController
     end
   end
 
+  def update
+    @channel = Channel.includes(:permissions).find(params[:id])
+    if @channel && !@channel.private? || @channel.permissions.find_by(user_id: current_user.id)
+      if @channel.update(channel_params)
+        if @channel.private?
+          user_ids = permission_params + [current_user.id]
+          @channel.permissions.each do |permission|
+            permission.destroy unless user_ids.include?(permission.user_id)
+          end
+          user_ids.each do |user_id|
+            unless @channel.permissions.any? { |permission| permission.user_id == user_id }
+              @channel.permissions.build(user_id: user_id)
+            end
+          end
+          unless @channel.save
+            render json: @channel.errors.full_messages, status: 422
+            return
+          end
+        else
+          debugger
+          @channel.permissions.destroy_all
+        end
+        render :show
+      else
+        render json: @channel.errors.full_messages, status: 422
+      end
+    else
+      render json: ["You do not have permission to edit this channel"], status: 422
+    end
+  end
 
   private
   def channel_params
