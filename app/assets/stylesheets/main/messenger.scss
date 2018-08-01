@@ -1,5 +1,6 @@
 $border-grey: #b3b3b4;
 $selected-border-grey: #717274;
+$placeholder-grey: #a0a0a0;
 
 .messenger, .message-form, .message-form textarea,{
   width:100%;
@@ -36,7 +37,10 @@ $selected-border-grey: #717274;
   padding: 8px;
   border: 2px solid $border-grey;
   border-radius: 5px;
+}
 
+.message-form textarea::placeholder {
+  color: $placeholder-grey;
 }
 
 .message-form textarea:focus {
