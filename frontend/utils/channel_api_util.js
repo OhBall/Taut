@@ -18,7 +18,7 @@ export const createChannel = (channel, userIds) => {
     url: 'api/channels',
     data: {
       channel,
-      permissions: {userIds},
+      permissions: { userIds },
     }
   });
 };
@@ -30,6 +30,16 @@ export const deleteChannel = id => {
   });
 };
 
+export const updateChannel = (channel, userIds) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `api/channels/${channel.id}`,
+    data: {
+      channel,
+      permissions: { userIds }
+    }
+  });
+};
 
 export const createChannelSubscriptions = (channels, receiveMessage) => {
   Object.keys(channels).forEach( channelId => {
