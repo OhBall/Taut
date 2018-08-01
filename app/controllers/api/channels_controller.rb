@@ -73,7 +73,6 @@ class Api::ChannelsController < ApplicationController
             return
           end
         else
-          debugger
           @channel.permissions.destroy_all
         end
         render :show
