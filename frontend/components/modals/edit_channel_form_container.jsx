@@ -9,10 +9,9 @@ const mapStateToProps = state => {
   const selectedConvo = state.entities.channels[selectedId];
   const { id, name, description } = selectedConvo;
 
-
   return {
     formType: 'Edit',
-    id, 
+    id,
     name,
     description,
     private: selectedConvo.private,
@@ -23,8 +22,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    formAction: channel => dispatch(editChannel(channel, userIds)),
-
+    formAction: (channel, userIds) => dispatch(editChannel(channel, userIds)),
+    clearModal: () => dispatch(clearModal()),
   };
 };
 
