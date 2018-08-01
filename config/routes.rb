@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :users, except: [:new, :edit]
     resource :session, only: [:create, :destroy]
     resources :messages, only: [:index, :create, :destroy]
-    resources :channels, only: [:index, :create, :show, :destroy]
+    resources :channels, only: [:index, :create, :destroy, :update]
     resources :permissions, only: [:index]
   end
 
