@@ -19,7 +19,7 @@ class Api::ChannelsController < ApplicationController
     @channel ||= Channel.new(channel_params)
 
     if @channel.save
-      if @channel.private && is_new
+      if @channel.private? && is_new
         permissions.each do |user_id|
           @channel.permissions.build(user_id: user_id)
         end

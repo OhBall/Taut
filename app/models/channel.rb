@@ -27,9 +27,16 @@ class Channel < ApplicationRecord
   end
 
   def check_permissions(user_id)
-    !self.private || self.permissions.find_by(user_id: user_id)
+    !self.private? || self.permissions.find_by(user_id: user_id)
   end
 
+  def private?
+    self.private
+  end
+
+  def is_dm?
+    self.is_dm
+  end
   private
   def destroy_messages
     self.messages.destroy_all
