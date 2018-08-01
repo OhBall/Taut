@@ -12,7 +12,9 @@ class SearchableUserList extends React.Component {
   }
 
   componentDidMount(){
-    this.props.selectUsers(this.props.prevUserIds);
+    if (this.props.modalType === 'EDIT_CHANNEL_MODAL') {
+      this.props.selectUsers(this.props.prevUserIds);
+    }
   }
 
   updateSearch(e){
