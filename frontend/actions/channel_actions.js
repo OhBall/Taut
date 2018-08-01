@@ -56,6 +56,14 @@ export const createChannel = (channel, permitIds) =>
     );
   };
 
+export const editChannel = (channel, permitIds) =>
+  dispatch => {
+    return ChannelApiUtil.updateChannel(channel, permitIds).then(
+      receivedChannel => dispatch(receiveChannel(receivedChannel)),
+      ({respenseJSON}) => dispatch(receiveErrors(responseJSON))
+    );
+  };
+
 export const deleteChannel = id => dispatch => {
   return ChannelApiUtil.deleteChannel(id).then(
     payload => dispatch(removeChannel(payload))
