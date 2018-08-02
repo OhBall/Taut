@@ -15,8 +15,6 @@ class DmListItem extends React.Component{
 
   handleSelection(){
     const dm = this.props.dm;
-    const permissions = this.props.permissions;
-    if (!this.props.dm.private || permissions[dm.id])
     { this.props.selectChannel(dm.id); }
   }
 

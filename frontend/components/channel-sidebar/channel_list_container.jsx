@@ -6,7 +6,6 @@ import { createChannelModal } from '../../actions/modal_actions';
 const mapStateToProps = state => {
   return {
     channels: state.entities.channels,
-    permissions: state.entities.permissions,
   };
 };
 

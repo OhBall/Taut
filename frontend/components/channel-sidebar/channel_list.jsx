@@ -6,17 +6,10 @@ class ChannelList extends React.Component{
 
   render(){
     const channels = Object.values(this.props.channels).filter(
-      convo =>  !convo.is_dm
+      convo => !convo.is_dm
     );
     const channelEls = channels.map( channel => {
-      if (!channel.private || this.props.permissions[channel.id]){
-        return <ChannelListItem
-                  key={channel.id}
-                  channel={channel}
-                 />;
-      } else {
-        return '';
-      }
+        return <ChannelListItem key={channel.id} channel={channel} />;
     });
 
     return (

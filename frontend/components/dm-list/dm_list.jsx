@@ -7,16 +7,9 @@ class DmList extends React.Component {
     const dms = Object.values(this.props.channels).filter(
       convo =>  convo.is_dm
     );
-    const dmEls = dms.map( dm => {
-      if (this.props.permissions[dm.id]){
-        return <DmListItem
-                  key={dm.id}
-                  dm={dm}
-                />;
-      } else {
-        return '';
-      }
-    });
+    const dmEls = dms.map(
+      dm => { return <DmListItem key={dm.id} dm={dm} />; }
+    );
 
     return (
       <ul className='dm-list'>

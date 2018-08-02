@@ -7,7 +7,6 @@ import { selectChannel } from '../../actions/ui_actions';
 const mapStateToProps = state => {
   return {
     channels: state.entities.channels,
-    permissions: state.entities.permissions,
   };
 };
 

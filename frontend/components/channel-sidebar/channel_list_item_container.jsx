@@ -6,7 +6,6 @@ import { selectChannel } from '../../actions/ui_actions';
 
 const mapStateToProps = state => {
   return {
-    permissions: state.entities.permissions,
     currentUserId: state.session.id,
     selectedId: state.ui.sidebar.selectedId,
   };
