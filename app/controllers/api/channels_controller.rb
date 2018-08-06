@@ -32,6 +32,7 @@ class Api::ChannelsController < ApplicationController
   def destroy
     @channel = Channel.find(params[:id])
     @general = Channel.find_by(name: 'general')
+
     unless @channel
       render json: ['Channel not found'], status: 422
       return; end
@@ -41,6 +42,7 @@ class Api::ChannelsController < ApplicationController
     unless @channel.destroy
       render json: @channel.errors.full_messages, status: 422
       return; end
+      
     render :destroy
   end
 
