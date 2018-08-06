@@ -17,6 +17,7 @@ class ChannelFormModal extends React.Component {
     this.update = this.update.bind(this);
     this.submit = this.submit.bind(this);
     this.toggleCheckbox = this.toggleCheckbox.bind(this);
+    this.disabledStatus = this.disabledStatus.bind(this);
   }
 
   update(field){
@@ -34,8 +35,15 @@ class ChannelFormModal extends React.Component {
     this.props.formAction(this.state, this.props.selectedUsers);
   }
 
+  disabledStatus(){
+    if (!this.state.name){
+      return true;
+    }
+    return this.state.private && Object.keys(this.props.selectedUsers).length == 0;
+  }
+
   render(){
-    const disabled = !this.state.name;
+
     const { formType } = this.props;
     const privacy = this.state.private;
     let privacyToggle;
@@ -96,7 +104,7 @@ class ChannelFormModal extends React.Component {
             </button>
             <button
               className='submit'
-              disabled={disabled}
+              disabled={this.disabledStatus()}
               onClick={this.submit}>
               {`${formType}${privacyToggle} Channel`}
             </button>
