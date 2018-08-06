@@ -1,9 +1,6 @@
 class Api::MessagesController < ApplicationController
   def index
-    # public_channels = Channel.where(private: false)
-    # public_messages = Message.where(conversationable: public_channels)
     @messages = Message.where(conversationable_id: params[:channelId])
-
   end
 
   def create
