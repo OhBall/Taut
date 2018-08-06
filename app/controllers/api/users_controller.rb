@@ -11,7 +11,8 @@ class Api::UsersController < ApplicationController
   def create
     @user = User.new(
       email: user_params[:email],
-      password: user_params[:password])
+      password: user_params[:password]
+    )
 
     if @user.save
       log_in(@user)
@@ -25,24 +26,25 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update(user_params)
+    if @user.id != current_user.id
+      render json: ["You cannot edit other users"], status: 403
+    elsif @user.update(user_params)
       render :show
     else
       render json: @user.errors.full_messages
     end
-
   end
 
   def destroy
     @user = User.find([params[:id]])
-    if @user.delete
+    if @user.id != current_user.id
+      render json: ["You cannot delete other users"], status: 403
+    elsif @user.delete
       render :show
     else
       render json: @user.errors.full_messages
     end
   end
-
-  # TODO: forbid deletion/updates of non current_user
 
   private
   def user_params
