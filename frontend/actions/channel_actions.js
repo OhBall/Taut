@@ -60,7 +60,7 @@ export const editChannel = (channel, permitIds) =>
   dispatch => {
     return ChannelApiUtil.updateChannel(channel, permitIds).then(
       receivedChannel => dispatch(receiveChannel(receivedChannel)),
-      ({respenseJSON}) => dispatch(receiveErrors(responseJSON))
+      ({responseJSON}) => dispatch(receiveErrors(responseJSON))
     );
   };
 
