@@ -50,7 +50,7 @@ class Api::ChannelsController < ApplicationController
         render json: @channel.errors.full_messages, status: 422
       end
     else
-      render json: ['You lack permission to delete this channel'], status: 422
+      render json: ['You lack permission to delete this channel'], status: 403
     end
   end
 
@@ -80,7 +80,7 @@ class Api::ChannelsController < ApplicationController
         render json: @channel.errors.full_messages, status: 422
       end
     else
-      render json: ["You do not have permission to edit this channel"], status: 422
+      render json: ["You do not have permission to edit this channel"], status: 403
     end
   end
 
