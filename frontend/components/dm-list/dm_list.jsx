@@ -3,13 +3,18 @@ import DmListItem from './dm_list_item_container';
 
 class DmList extends React.Component {
 
-  render() {
-    const dms = Object.values(this.props.channels).filter(
+  createDmEls(convos){
+    const dms = Object.values(convos).filter(
       convo =>  convo.is_dm
     );
     const dmEls = dms.map(
-      dm => { return <DmListItem key={dm.id} dm={dm} />; }
+      dm => <DmListItem key={dm.id} dm={dm} />
     );
+    return dmEls;
+  }
+
+  render() {
+    const dmEls = this.createDmEls(this.props.channels);
 
     return (
       <ul className='dm-list'>
