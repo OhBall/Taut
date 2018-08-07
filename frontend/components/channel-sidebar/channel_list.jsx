@@ -8,9 +8,9 @@ class ChannelList extends React.Component{
     const channels = Object.values(this.props.channels).filter(
       convo => !convo.is_dm
     );
-    const channelEls = channels.map( channel => {
-        return <ChannelListItem key={channel.id} channel={channel} />;
-    });
+    const channelEls = channels.map(
+      channel => <ChannelListItem key={channel.id} channel={channel} />
+    );
 
     return (
       <ul className='channel-list'>
