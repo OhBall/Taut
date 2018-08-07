@@ -22,7 +22,7 @@ class Channel < ApplicationRecord
 
   def self.find_by_permitted_users (user_ids)
     Channel.where(is_dm: true).find do |channel|
-      return channel if channel.user_ids.sort() == user_ids.sort()
+      return channel if channel.user_ids.sort == user_ids.sort
     end
   end
 
