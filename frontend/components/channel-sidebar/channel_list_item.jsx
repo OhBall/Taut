@@ -14,8 +14,8 @@ class ChannelListItem extends React.Component {
   }
 
   handleSelection(){
-    const channel = this.props.channel;
-    this.props.selectChannel(channel.id); 
+    const { selectChannel, channel } = this.props;
+    selectChannel(channel.id);
   }
 
   render() {

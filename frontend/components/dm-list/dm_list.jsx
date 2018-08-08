@@ -14,11 +14,12 @@ class DmList extends React.Component {
   }
 
   render() {
-    const dmEls = this.createDmEls(this.props.channels);
+    const { channels, createDmModal } = this.props;
+    const dmEls = this.createDmEls(channels);
 
     return (
       <ul className='dm-list'>
-        <header onClick={this.props.createDmModal}>
+        <header onClick={createDmModal}>
           Direct Messages
           <span>&#x2295;</span>
         </header>

@@ -10,12 +10,13 @@ class ConversationSidebar extends React.Component{
   }
 
   render(){
-    const {username} = this.props.currentUser;
+    const { currentUser, logout } = this.props;
+    
     return (
       <section className='channel-sidebar'>
         <header>
-          <h1>{username}</h1>
-          <button onClick={this.props.logout}>Log Out</button>
+          <h1>{currentUser.username}</h1>
+          <button onClick={logout}>Log Out</button>
         </header>
         <ChannelList />
         <DmList />

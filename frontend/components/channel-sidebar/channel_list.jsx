@@ -15,11 +15,11 @@ class ChannelList extends React.Component{
   }
 
   render(){
-    const channelEls = this.createChannelEls(this.props.channels);
-
+    const { channels, createChannelModal } = this.props;
+    const channelEls = this.createChannelEls(channels);
     return (
       <ul className='channel-list'>
-        <header onClick={this.props.createChannelModal}>
+        <header onClick={createChannelModal}>
           Channels
           <span>&#x2295;</span>
         </header>

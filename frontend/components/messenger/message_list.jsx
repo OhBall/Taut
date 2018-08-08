@@ -10,7 +10,6 @@ class MessageList extends React.Component{
   }
 
   componentDidMount() {
-    const { selectedId, receiveMessage } = this.props;
     this.props.requestAllUsers();
   }
 
@@ -22,21 +21,21 @@ class MessageList extends React.Component{
 
   componentDidUpdate(){
     const { selectedId, receiveMessage } = this.props;
-    document.getElementById('overflow').scrollIntoView({behavior: "smooth"});
+    document.getElementById('overflow').scrollIntoView({ behavior: "smooth" });
   }
 
   render(){
-    const { messages } = this.props;
+    const { messages, selectedId, users, currentUserId } = this.props;
     const relevantMessages = Object.values(messages).filter( message => {
-      return message.conversationable_id === this.props.selectedId;
+      return message.conversationable_id === selectedId;
     });
     const messageEls = relevantMessages.map( message => {
-      const user = this.props.users[message.user_id];
+      const user = users[message.user_id];
       return <MessageListItem
                 key={message.id}
                 message={message}
                 user={user}
-                currentUserId={this.props.currentUserId} />;
+                currentUserId={currentUserId} />;
     });
 
     return(

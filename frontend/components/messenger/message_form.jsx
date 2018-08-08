@@ -20,9 +20,8 @@ class MessageForm extends React.Component {
   }
 
   update(e) {
-    if (e.target.value !== "\n"){
-     this.setState({ body: e.target.value });
-    }
+    const value = e.target.value;
+    if (value !== "\n") this.setState({ body: value });
   }
 
   handleKeyPress(e) {

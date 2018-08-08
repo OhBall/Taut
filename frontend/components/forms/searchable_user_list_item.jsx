@@ -6,7 +6,7 @@ const SearchableUserListItem = props => {
     props.selectUser(props.user.id);
   };
 
-  const {username, email } = props.user;
+  const { username, email } = props.user;
 
   return (
     <li className='searchable-user-list-item' onClick={handleClick}>

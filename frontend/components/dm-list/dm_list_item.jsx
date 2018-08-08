@@ -14,22 +14,23 @@ class DmListItem extends React.Component{
   }
 
   handleSelection(){
-    const dm = this.props.dm;
-    { this.props.selectChannel(dm.id); }
+    const { dm, selectChannel } = this.props;
+    selectChannel(dm.id);
   }
 
   render() {
-    const { dm, selectChannel, currentUserId, users } = this.props;
+    const { dm,
+            selectChannel,
+            currentUserId,
+            users,
+            selectedId } = this.props;
 
-    const selected = dm.id === this.props.selectedId ? 'selected' : '';
+    const selected = dm.id === selectedId ? 'selected' : '';
     const hideOnPublic = dm.private ? '' : 'hidden';
     const hideOnPrivate = dm.private ? 'hidden' : '';
 
-    const otherUsers = dm.user_ids.filter(
-       userId => userId !== currentUserId
-     ).map( userId => {
-       if(users[userId]) return users[userId].username;
-     });
+    const otherUserIds = dm.user_ids.filter( userId => userId !== currentUserId );
+    const otherUsers = otherUserIds.map( userId => users[userId].username );
 
     const otherUserCount = (dm.user_ids.length || 1) - 1;
     const countString = otherUserCount <= 1  ? '' :`${otherUserCount}`;

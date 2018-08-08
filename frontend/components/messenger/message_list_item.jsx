@@ -38,13 +38,13 @@ class MessageListItem extends React.Component {
   }
 
   render() {
-    const { body, created_at, id } = this.props.message;
+    const { body, created_at, id, user } = this.props.message;
 
     let username = '';
     let img_url = '';
-    if (this.props.user) {
-      username = this.props.user.username;
-      img_url = this.props.user.img_url;
+    if (user) {
+      username = user.username;
+      img_url = user.img_url;
     }
 
     return(

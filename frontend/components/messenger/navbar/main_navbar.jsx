@@ -17,7 +17,7 @@ class MainNavbar extends React.Component{
   }
 
   render(){
-    const {selectedConvo, users, currentUserId} = this.props;
+    const { selectedConvo, users, currentUserId } = this.props;
 
     let h1 = '';
     let h2 = '';
@@ -34,7 +34,7 @@ class MainNavbar extends React.Component{
       h2 = selectedConvo.description;
     }
 
-    const hidden = this.props.selectedConvo.is_dm ? 'hidden' : '';
+    const hidden = selectedConvo.is_dm ? 'hidden' : '';
 
     return (
       <header className='main-navbar'>

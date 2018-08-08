@@ -36,9 +36,7 @@ class ChannelFormModal extends React.Component {
   }
 
   disabledStatus(){
-    if (!this.state.name){
-      return true;
-    }
+    if (!this.state.name) return true;
     return this.state.private && Object.keys(this.props.selectedUsers).length == 0;
   }
 
