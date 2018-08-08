@@ -30,7 +30,9 @@ class DmListItem extends React.Component{
     const hideOnPrivate = dm.private ? 'hidden' : '';
 
     const otherUserIds = dm.user_ids.filter( userId => userId !== currentUserId );
-    const otherUsers = otherUserIds.map( userId => users[userId].username );
+    const otherUsers = otherUserIds.map( userId => {
+      if(users[userId]) return users[userId].username;
+    });
 
     const otherUserCount = (dm.user_ids.length || 1) - 1;
     const countString = otherUserCount <= 1  ? '' :`${otherUserCount}`;
