@@ -22,7 +22,4 @@ class Message < ApplicationRecord
 
   after_create_commit { MessageBroadcastJob.perform_later( self )}
 
-  //# TODO: implement a 'ensure_subscribed' method that makes sure that a user
-    # =>    is subscribed to a channel before they make a message that belongs
-    # =>    to that channel. Note: This todo is also located in Channel.rb
 end

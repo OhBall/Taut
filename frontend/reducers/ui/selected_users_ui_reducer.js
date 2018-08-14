@@ -4,8 +4,6 @@ import { SELECT_USER, SELECT_USERS, UNSELECT_USER } from '../../actions/ui_actio
 import { CLEAR_MODAL } from '../../actions/modal_actions.js';
 import { RECEIVE_CHANNEL } from '../../actions/channel_actions';
 
-// TODO: change selectedUsers data structure to a Set
-
 const SelectedUsersUiReducer = (state = {}, action) => {
   Object.freeze(state);
   const copyState = merge({}, state);
