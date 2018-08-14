@@ -28,13 +28,13 @@ class MessageListItem extends React.Component {
   }
 
   showDeleteButton(){
-    if (this.props.currentUserId === this.props.message.user_id){
-      this.setState({hide: false});
+    if (this.props.currentUserId === this.props.message.user_id) {
+      this.setState({ hide: false });
     }
   }
 
   hideDeleteButton(){
-    this.setState({hide: true});
+    this.setState({ hide: true });
   }
 
   render() {

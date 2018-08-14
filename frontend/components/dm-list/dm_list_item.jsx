@@ -19,11 +19,13 @@ class DmListItem extends React.Component{
   }
 
   render() {
-    const { dm,
-            selectChannel,
-            currentUserId,
-            users,
-            selectedId } = this.props;
+    const {
+      dm,
+      selectChannel,
+      currentUserId,
+      users,
+      selectedId
+    } = this.props;
 
     const selected = dm.id === selectedId ? 'selected' : '';
     const hideOnPublic = dm.private ? '' : 'hidden';

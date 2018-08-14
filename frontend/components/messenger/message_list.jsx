@@ -31,11 +31,13 @@ class MessageList extends React.Component{
     });
     const messageEls = relevantMessages.map( message => {
       const user = users[message.user_id];
-      return <MessageListItem
-                key={message.id}
-                message={message}
-                user={user}
-                currentUserId={currentUserId} />;
+      return (
+        <MessageListItem
+          key={message.id}
+          message={message}
+          user={user}
+          currentUserId={currentUserId} />
+      );
     });
 
     return(

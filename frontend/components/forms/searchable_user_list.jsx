@@ -23,10 +23,13 @@ class SearchableUserList extends React.Component {
   }
 
   createMatchEls(){
-    const { users,
-            selectedUsers,
-            currentUserId,
-            selectUser } = this.props;
+    const {
+      users,
+      selectedUsers,
+      currentUserId,
+      selectUser
+    } = this.props;
+
     const matches = findMatchingUsers(users, this.state.query);
 
     const nonSelectedMatches = matches.filter(user => {
@@ -34,23 +37,23 @@ class SearchableUserList extends React.Component {
               user.id !== currentUserId);
     });
 
-    const matchEls = nonSelectedMatches.map(
-       user => <SearchableUserListItem
-                  key={user.id}
-                  user={user}
-                  selectUser={selectUser} />
+    const matchEls = nonSelectedMatches.map( user =>
+      <SearchableUserListItem
+        key={user.id}
+        user={user}
+        selectUser={selectUser} />
     );
     return matchEls;
   }
 
   createSelectedEls(){
     const { users, selectedUsers, deselectUser } = this.props;
-    const selectedEls = Object.keys(selectedUsers).map(
-      userId => <SelectedUserListItem
-                  key={userId}
-                  user={users[userId]}
-                  deselectUser={deselectUser} />
-              );
+    const selectedEls = Object.keys(selectedUsers).map( userId =>
+      <SelectedUserListItem
+        key={userId}
+        user={users[userId]}
+        deselectUser={deselectUser} />
+    );
     return selectedEls;
   }
 

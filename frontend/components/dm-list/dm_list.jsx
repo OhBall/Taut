@@ -4,12 +4,8 @@ import DmListItem from './dm_list_item_container';
 class DmList extends React.Component {
 
   createDmEls(convos){
-    const dms = Object.values(convos).filter(
-      convo =>  convo.is_dm
-    );
-    const dmEls = dms.map(
-      dm => <DmListItem key={dm.id} dm={dm} />
-    );
+    const dms = Object.values(convos).filter( convo =>  convo.is_dm );
+    const dmEls = dms.map( dm => <DmListItem key={dm.id} dm={dm} /> );
     return dmEls;
   }
 
