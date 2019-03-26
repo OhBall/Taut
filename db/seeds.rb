@@ -6,19 +6,23 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-users = User.create([
+User.destroy_all
+Message.destroy_all
+Channel.destroy_all
+
+users = User.create!([
   {email: 'olivermartinball@gmail.com', username: 'Oliver', password: 'hunter2' },
   {email: 'jimmy@gmail.com', password: 'hunter2' },
   {email: 'john@continental.com', username: 'John', password: 'hunter2' },
   {email: 'guest@guest.com', username: "guest", password: 'hunter2'}
 ])
 
-channels = Channel.create([
+channels = Channel.create!([
   {name: 'general', description: 'Thread for general discussion'},
   {name: 'Lunch', description: 'Discuss your lunch plans here'}
 ])
 
-messages = Message.create([
+messages = Message.create!([
   { user_id: User.first.id,
     body: 'Hello, and welcome to Taut!',
     conversationable_type: 'Channel',
@@ -30,5 +34,10 @@ messages = Message.create([
   { user_id: User.first.id,
     body: "This \nis\na\nmulti-line message. \nHopefully, \nit's styled correctly!",
     conversationable_type: 'Channel',
+    conversationable_id: Channel.first.id },
+  { user_id: User.first.id,
+    body: "ThisIsAlsoAVeryLongMessage.However,thePurposeOfThisMessageIsSlightlyDifferent.ASingleWordOfTextWouldNotBeProperlyBrokenUpAndThisIsTheTextToMakeSureThatIsAlsoAccountedFor!",
+    conversationable_type: 'Channel',
     conversationable_id: Channel.first.id }
+  
 ])
