@@ -30,13 +30,15 @@ class SessionForm extends React.Component {
   }
 
   loginAsGuest() {
-    this.lockInput = true;
-    const emailArr = 'guest@guest.com'.split('');
-    const passwordArr = 'hunter2'.split('');
-    const button = document.getElementById('login');
-    this.setState({email: '', password: ''}, () =>
-      this.loginAsGuestHelper(emailArr, passwordArr, button)
-    );
+    if (!this.lockInput) {
+      this.lockInput = true;
+      const emailArr = 'guest@guest.com'.split('');
+      const passwordArr = 'hunter2'.split('');
+      const button = document.getElementById('login');
+      this.setState({email: '', password: ''}, () =>
+        this.loginAsGuestHelper(emailArr, passwordArr, button)
+      );
+    }
   }
 
   loginAsGuestHelper(emailArr, passwordArr, button){
@@ -44,14 +46,14 @@ class SessionForm extends React.Component {
       this.setState(
         { email: this.state.email + emailArr.shift() }, () => {
           window.setTimeout( () =>
-            this.loginAsGuestHelper(emailArr, passwordArr, button), 75);
+            this.loginAsGuestHelper(emailArr, passwordArr, button), 50);
         }
       );
     } else if (passwordArr.length > 0) {
       this.setState(
         { password: this.state.password + passwordArr.shift() }, () => {
           window.setTimeout( () =>
-            this.loginAsGuestHelper(emailArr, passwordArr, button), 100);
+            this.loginAsGuestHelper(emailArr, passwordArr, button), 70);
         }
       );
     } else {
