@@ -18,16 +18,19 @@ class SessionForm extends React.Component {
 
   update(field){
     return (e) => {
-      this.setState({[field]: e.target.value});
+      if (!this.lockInput) this.setState({[field]: e.target.value});
     };
   }
 
   handleSubmit(e) {
-    e.preventDefault();
-    this.props.processForm(this.state);
+    if (!this.lockInput) {
+      e.preventDefault();
+      this.props.processForm(this.state);
+    }
   }
 
   loginAsGuest() {
+    this.lockInput = true;
     const emailArr = 'guest@guest.com'.split('');
     const passwordArr = 'hunter2'.split('');
     const button = document.getElementById('login');
@@ -52,12 +55,13 @@ class SessionForm extends React.Component {
         }
       );
     } else {
+      this.lockInput = false;
       button.click();
     }
   }
 
   render(){
-    const { formType, navLink, errors } = this.props;
+    const { formType, navLink } = this.props;
 
     let guestLoginButton;
     if (formType === 'Sign in') {
