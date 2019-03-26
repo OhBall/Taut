@@ -1,5 +1,4 @@
 import React from 'react';
-import Promise from 'promise';
 
 import SessionErrors from './session_errors';
 
@@ -18,7 +17,7 @@ class SessionForm extends React.Component {
 
   update(field){
     return (e) => {
-      if (!this.lockInput) this.setState({[field]: e.target.value});
+      if (!this.lockInput) { this.setState({[field]: e.target.value}) };
     };
   }
 
